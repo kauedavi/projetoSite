@@ -1,0 +1,163 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid #004494;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+}
+
+.home{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+header {
+    
+    text-align: center;
+    padding: 20px;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    margin-top: 1rem;
+}
+.home button{
+    margin: 0.3rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.home button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+nav button {
+    margin: 0.3rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Imagens */
+#img {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 0;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Seções */
+section {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #004080;
+}
+
+section h3 {
+    margin-top: 1rem;
+    color: #0066cc;
+}
+
+.toggle-btn {
+    margin-top: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #218838;
+}
+
+/* Rodapé */
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 4px solid #002b5c;
+    border-radius: 20px 20px 0 0;
+    margin-top: 3rem;
+}
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    nav button {
+        display: block;
+        width: 100%;
+        margin: 0.4rem 0;
+    }
+
+    #img {
+        flex-direction: column;
+        align-items: center;
+    }
+}
