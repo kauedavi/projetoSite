@@ -15,12 +15,11 @@ body {
 
 /* Header */
 header {
-    background-color: #0056b3;
+    background-color: #042c5c;
     color: white;
     padding: 2rem 1rem;
     text-align: center;
-    border-bottom: 4px solid #004494;
-    border-radius: 0 0 20px 20px;
+    border-bottom: 4px solid #042c5c;
     position: relative;
 }
 
@@ -46,7 +45,7 @@ nav button,
     margin: 0.3rem;
     padding: 0.6rem 1.4rem;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: #004f99 ;
     color: white;
     border: none;
     border-radius: 30px;
@@ -82,7 +81,7 @@ nav button:hover,
 
 /* Styled Search Button */
 .btn-abrir-pesquisa {
-    background: linear-gradient(135deg, #4f8ef7, #3a72d2);
+    background: (135deg, #004f99 , #004f99 );
     color: white;
     border: none;
     border-radius: 0.75rem; /* consistent with guidelines */
@@ -90,18 +89,17 @@ nav button:hover,
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(63, 114, 255, 0.3);
     transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-abrir-pesquisa:hover {
-    background: linear-gradient(135deg, #3a72d2, #2c57b2);
+    background:(135deg, #004f99 , #2c57b2);
     box-shadow: 0 4px 12px rgba(33, 86, 179, 0.5);
     transform: scale(1.05);
 }
 
 .btn-abrir-pesquisa:focus-visible {
-    outline: 3px solid #1e40af;
+    outline: 3px solid #004f99 ;
     outline-offset: 2px;
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
 }
@@ -151,7 +149,7 @@ section h2 {
 
 section h3 {
     margin-top: 1rem;
-    color: #0066cc;
+    color: #004f99 
 }
 
 /* Images */
@@ -168,12 +166,12 @@ section h3 {
 
 /* Footer */
 footer {
-    background-color: #004080;
+    background-color: #042c5c;
     color: white;
     text-align: center;
     padding: 1.5rem;
-    border-top: 4px solid #002b5c;
-    border-radius: 20px 20px 0 0;
+    border-top: 4px solid #042c5c;
+
     margin-top: 3rem;
 }
 
