@@ -11,18 +11,22 @@
 <body>
 
     <header>
+        <img class="logo"
+            src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_91,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png"
+            alt="">
+
         <div class="home">
-            <a href="teste.html"><button>Home</button></a>
-            
+            <a href="https://www.etecsebrae.com/"><button>Home</button></a>
         </div>
 
         <h1>Projeto Metaverso (protótipo)</h1>
-         
-        <img class="logo"  src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_91,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png" alt="">
-        
+
+
+
         <div class="pesquisa-container">
             <button class="btn-abrir-pesquisa" onclick="togglePesquisa()">🔍</button>
-            <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()" style="display: none;">
+            <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()"
+                style="display: none;">
         </div>
 
         <nav>
@@ -51,7 +55,9 @@
                 <p>Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien.
                     Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.</p>
             </div>
+
             <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+            
         </section>
 
         <section id="texto3" class="texto-expandivel">
@@ -60,8 +66,7 @@
                 <h3>Como funciona?</h3>
                 <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
                     Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                <img src=""
-                    alt="">
+                <img src="" alt="">
             </div>
             <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
         </section>
@@ -94,26 +99,26 @@
 
         //sistema de pesquisa:
         function togglePesquisa() {
-    const campo = document.getElementById("campoPesquisa");
-    campo.style.display = campo.style.display === "none" ? "block" : "none";
-    if (campo.style.display === "block") {
-        campo.focus();
-    }
-}
-
-function filtrarTextos() {
-    const termo = document.getElementById("campoPesquisa").value.toLowerCase();
-    const secoes = document.querySelectorAll("section");
-
-    secoes.forEach(secao => {
-        const textoCompleto = secao.innerText.toLowerCase();
-        if (textoCompleto.includes(termo)) {
-            secao.style.display = "block";
-        } else {
-            secao.style.display = "none";
+            const campo = document.getElementById("campoPesquisa");
+            campo.style.display = campo.style.display === "none" ? "block" : "none";
+            if (campo.style.display === "block") {
+                campo.focus();
+            }
         }
-    });
-}
+
+        function filtrarTextos() {
+            const termo = document.getElementById("campoPesquisa").value.toLowerCase();
+            const secoes = document.querySelectorAll("section");
+
+            secoes.forEach(secao => {
+                const textoCompleto = secao.innerText.toLowerCase();
+                if (textoCompleto.includes(termo)) {
+                    secao.style.display = "block";
+                } else {
+                    secao.style.display = "none";
+                }
+            });
+        }
     </script>
 
 </body>

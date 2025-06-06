@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f4f8;
@@ -12,13 +13,55 @@ body {
     line-height: 1.6;
 }
 
-.logo {
-    position: absolute;
-    right: 60px;
-    top: 20px;
-    height: 60px;
+/* Header */
+header {
+    background-color: #0056b3;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid #004494;
+    border-radius: 0 0 20px 20px;
+    position: relative;
 }
 
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.home {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.home button,
+nav button,
+.toggle-btn {
+    margin: 0.3rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.home button:hover,
+nav button:hover,
+.toggle-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Search Container */
 .pesquisa-container {
     position: absolute;
     top: 20px;
@@ -37,103 +80,57 @@ body {
     width: 200px;
 }
 
+/* Styled Search Button */
 .btn-abrir-pesquisa {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #4f8ef7, #3a72d2);
     color: white;
     border: none;
-    border-radius: 30px;
-    padding: 0.4rem 0.8rem;
+    border-radius: 0.75rem; /* consistent with guidelines */
+    padding: 0.5rem 1.2rem;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(63, 114, 255, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .btn-abrir-pesquisa:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #3a72d2, #2c57b2);
+    box-shadow: 0 4px 12px rgba(33, 86, 179, 0.5);
+    transform: scale(1.05);
 }
 
-/* Cabeçalho */
-header {
-    background-color: #0056b3;
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    border-bottom: 4px solid #004494;
-    border-radius: 0 0 20px 20px;
-    position: relative;
+.btn-abrir-pesquisa:focus-visible {
+    outline: 3px solid #1e40af;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
 }
 
-.home{
+/* Logo */
+.logo {
     position: absolute;
-    left: 20px;
-    top: 20px;
+    left: 200px; /* Ajustado para telas menores */
+    top: 30px;
 }
 
-header {
-    
-    text-align: center;
-    padding: 20px;
-}
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-nav {
-    margin-top: 1rem;
-}
-.home button{
-    margin: 0.3rem;
-    padding: 0.6rem 1.4rem;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-.home button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-nav button {
-    margin: 0.3rem;
-    padding: 0.6rem 1.4rem;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+@media (max-width: 600px) {
+    .logo {
+        position: relative; /* Mudar para relativo para que fique abaixo do botão home */
+        left: 0; /* Remover a posição à esquerda */
+        top: 10px; /* Ajustar a posição vertical */
+        margin: 0 auto; /* Centralizar a logo */
+        display: block; /* Garantir que a logo seja um bloco */
+    }
 }
 
-nav button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Imagens */
-#img {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background-color: white;
-    padding: 0;
-}
-
-/* Conteúdo principal */
+/* Main Content */
 main {
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Seções */
+/* Sections */
 section {
     background-color: white;
     margin-bottom: 2rem;
@@ -157,22 +154,19 @@ section h3 {
     color: #0066cc;
 }
 
-.toggle-btn {
-    margin-top: 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+/* Images */
+#img {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 0;
 }
 
-.toggle-btn:hover {
-    background-color: #218838;
-}
-
-/* Rodapé */
+/* Footer */
 footer {
     background-color: #004080;
     color: white;
@@ -183,13 +177,36 @@ footer {
     margin-top: 3rem;
 }
 
-/* Rolagem suave */
+/* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Responsivo */
+/* Responsive Design */
 @media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem; /* Reduzir o tamanho da fonte do título */
+    }
+
+    .home {
+        left: 10px; /* Ajustar a posição da home */
+        top: 10px; /* Ajustar a posição da home */
+    }
+
+    .pesquisa-container {
+        flex-direction: column; /* Colocar os elementos em coluna */
+        position: relative; /* Mudar para relativo */
+        top: auto; /* Remover a posição absoluta */
+        right: auto; /* Remover a posição absoluta */
+        margin: 10px; /* Adicionar margem */
+    }
+
+    .pesquisa-container input {
+        display: block; /* Mostrar o campo de pesquisa */
+        width: 100%; /* Largura total */
+        margin-bottom: 10px; /* Espaçamento inferior */
+    }
+
     nav button {
         display: block;
         width: 100%;
@@ -199,5 +216,9 @@ html {
     #img {
         flex-direction: column;
         align-items: center;
+    }
+
+    main {
+        padding: 0 0.5rem; /* Reduzir o padding em telas menores */
     }
 }
