@@ -8,7 +8,7 @@
 /* Fonte moderna */
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(../img/SL-072321-44560-01.jpg);
+    background-image: url(../img/background.jpg);
     background-size: cover;
     background-attachment: fixed;
     color: #333;
@@ -29,7 +29,8 @@ header {
 }
 
 /* Estrutura do header */
-.header-esquerda, .header-direita {
+.header-esquerda,
+.header-direita {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -179,7 +180,7 @@ nav.navegacao button {
     color: #004f99;
     font-weight: 600;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* Erros */
@@ -222,10 +223,18 @@ html {
         flex-direction: column;
     }
 
-    .pesquisa-container input {
-        display: block;
+   .pesquisa-container input {
+        display: none; /* importante para manter o controle da visibilidade */
         width: 100%;
-        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .pesquisa-container input.ativo {
+        display: block;
     }
 
     nav button {
