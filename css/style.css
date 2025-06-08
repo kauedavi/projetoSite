@@ -84,16 +84,26 @@ button.btn-quadrado {
 }
 
 .pesquisa-container input {
+    display: none;
+    width: 220px;
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    border: 1px solid #ccc;
-    display: none;
-    width: 200px;
-    transition: all 0.3s ease;
+    border: 2px solid #ccc;
+    background-color: #f5f7fa;
+    font-size: 1rem;
+    color: #042c5c;
+    transition: all 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
 }
 
 .pesquisa-container input.ativo {
     display: block;
+}
+
+.pesquisa-container input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
+    background-color: white;
 }
 
 /* Botão de pesquisa */
