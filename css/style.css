@@ -5,11 +5,12 @@
     box-sizing: border-box;
 }
 
-/* Body */
+/* Fonte moderna */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(../img/back.jpg);
-    background-size:  100% 100%;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../img/SL-072321-44560-01.jpg);
+    background-size: cover;
+    background-attachment: fixed;
     color: #333;
     line-height: 1.6;
 }
@@ -18,151 +19,131 @@ body {
 header {
     background-color: #042c5c;
     color: white;
-    padding: 2rem 1rem;
+    padding: 1rem 2rem;
+    border-bottom: 4px solid #0056b3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estrutura do header */
+.header-esquerda, .header-direita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.header-centro {
+    flex: 1;
     text-align: center;
-    border-bottom: 4px solid #042c5c;
-    position: relative;
+    min-width: 200px;
 }
 
 header h1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
-.home {
-    position: absolute;
-    left: 20px;
-    top: 20px;
+.logo {
+    height: 50px;
 }
 
-nav {
-    margin-top: 1rem;
-}
-
-/* Buttons */
-.home button,
-nav button,
-.toggle-btn {
+/* Botões padrão */
+button {
+    font-family: inherit;
     margin: 0.3rem;
     padding: 0.6rem 1.4rem;
     font-size: 1rem;
-    background-color: #004f99 ;
+    background-color: #0056b3;
     color: white;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-.home button:hover,
-nav button:hover,
-.toggle-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+button:hover {
+    background-color: #0071e3;
+    transform: translateY(-2px);
 }
 
-/* Search Container */
+/* Botões quadrados */
+button.btn-quadrado {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* Campo de pesquisa */
 .pesquisa-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .pesquisa-container input {
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
     border-radius: 20px;
     border: 1px solid #ccc;
     display: none;
-    transition: width 0.3s ease;
     width: 200px;
+    transition: all 0.3s ease;
 }
 
-/* Styled Search Button */
+.pesquisa-container input.ativo {
+    display: block;
+}
+
+/* Botão de pesquisa */
 .btn-abrir-pesquisa {
-    background: (135deg, #004f99 , #004f99 );
-    color: white;
-    border: none;
-    border-radius: 0.75rem; /* consistent with guidelines */
-    padding: 0.5rem 1.2rem;
-    cursor: pointer;
-    font-size: 1rem;
     font-weight: 600;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: none;
 }
 
-.btn-abrir-pesquisa:hover {
-    background:(135deg, #004f99 , #2c57b2);
-    box-shadow: 0 4px 12px rgba(33, 86, 179, 0.5);
-    transform: scale(1.05);
-}
-
-.btn-abrir-pesquisa:focus-visible {
-    outline: 3px solid #004f99 ;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
-}
-
-/* Logo */
-.logo {
-    position: absolute;
-    left: 200px; /* Ajustado para telas menores */
-    top: 30px;
-}
-
-@media (max-width: 600px) {
-    .logo {
-        position: relative; /* Mudar para relativo para que fique abaixo do botão home */
-        left: 0; /* Remover a posição à esquerda */
-        top: 10px; /* Ajustar a posição vertical */
-        margin: 0 auto; /* Centralizar a logo */
-        display: block; /* Garantir que a logo seja um bloco */
-    }
-}
-
-/* Main Content */
+/* Main */
 main {
-    max-width: 900px;
+    max-width: 960px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 1.2rem;
 }
 
-/* Sections */
+/* Seções */
 section {
-    background-color: white;
+    background-color: #ffffff;
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease;
 }
 
 section:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 }
 
 section h2 {
     margin-bottom: 1rem;
-    color: #004080;
+    color: #042c5c;
+    font-size: 1.6rem;
 }
 
 section h3 {
     margin-top: 1rem;
-    color: #004f99 
+    color: #0056b3;
 }
 
-/* Images */
+/* Imagens */
 #img {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    padding: 0;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: #f5f7fa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Footer */
@@ -170,40 +151,71 @@ footer {
     background-color: #042c5c;
     color: white;
     text-align: center;
-    padding: 1.5rem;
-    border-top: 4px solid #042c5c;
-
+    padding: 2rem;
+    border-top: 4px solid #0056b3;
     margin-top: 3rem;
 }
 
-/* Smooth Scrolling */
+/* Navegação */
+nav.navegacao {
+    background-color: #004f99;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav.navegacao button {
+    background-color: white;
+    color: #004f99;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Erros */
+#error {
+    display: none;
+    text-align: center;
+    color: red;
+    padding: 20px;
+    background-color: #ffe5e5;
+    border: 1px solid #ffaaaa;
+    border-radius: 8px;
+    font-family: sans-serif;
+}
+
+/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem; /* Reduzir o tamanho da fonte do título */
+/* Responsividade */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
     }
 
-    .home {
-        left: 10px; /* Ajustar a posição da home */
-        top: 10px; /* Ajustar a posição da home */
+    .header-centro {
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .header-esquerda,
+    .header-direita {
+        justify-content: center;
+        margin: 0.5rem 0;
     }
 
     .pesquisa-container {
-        flex-direction: column; /* Colocar os elementos em coluna */
-        position: relative; /* Mudar para relativo */
-        top: auto; /* Remover a posição absoluta */
-        right: auto; /* Remover a posição absoluta */
-        margin: 10px; /* Adicionar margem */
+        flex-direction: column;
     }
 
     .pesquisa-container input {
-        display: block; /* Mostrar o campo de pesquisa */
-        width: 100%; /* Largura total */
-        margin-bottom: 10px; /* Espaçamento inferior */
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     nav button {
@@ -218,6 +230,6 @@ html {
     }
 
     main {
-        padding: 0 0.5rem; /* Reduzir o padding em telas menores */
+        padding: 0 0.8rem;
     }
 }

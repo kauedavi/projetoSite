@@ -4,38 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navegação por Texto com ID</title>
+    <title>Museu Etec Sebrae</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" type="imagex/png" href="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png">
 </head>
 
 <body>
 
     <header>
-        <img class="logo"
-            src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_91,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png"
-            alt="">
-<br>
-        <div class="home">
-            <a href="https://www.etecsebrae.com/"><button>Home</button></a>
+        <div class="header-esquerda">
+            <img class="logo"
+                src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png"
+                alt="Logo Etec Sebrae">
         </div>
-
-        <h1>Museu Etec Sebrae</h1>
-
-
-
-        <div class="pesquisa-container">
-            <button class="btn-abrir-pesquisa" onclick="togglePesquisa()">🔍</button>
-            <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()"
-                style="display: none;">
+        <div class="header-centro">
+            <h1>Museu Etec Sebrae</h1>
+            <nav>
+                <span>principais sugestões:</span>
+                <br>
+                <button onclick="location.href='#texto1'">Museu Etec Sebrae</button>
+                <button onclick="location.href='#texto2'">Biblioteca da Etec Sebrae</button>
+                <button onclick="location.href='#texto3'">Uniformes e Objetos</button>
+            </nav>
         </div>
-
-        <nav>
-            principais sugestões:
-            <br>
-            <button onclick="location.href='#texto1'">Ir para Texto 1</button>
-            <button onclick="location.href='#texto2'">Ir para Texto 2</button>
-            <button onclick="location.href='#texto3'">Ir para Texto 3</button>
-        </nav>
+        <div class="header-direita">
+            <div class="home"><a href="https://www.etecsebrae.com/"><button>Home</button></a></div>
+            <div class="pesquisa-container">
+                <button class="btn-abrir-pesquisa" onclick="togglePesquisa()">🔍</button>
+                <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()">
+            </div>
+        </div>
     </header>
 
     <main>
@@ -113,9 +111,15 @@
                     2025. O objetivo era criar um mundo virtual no jogo Minecraft para explicar, de forma prática, como
                     funciona o metaverso. Foi construído um ambiente coletivo, com estruturas inspiradas na própria
                     escola e desafios que tornaram a experiência mais dinâmica e envolvente.</p>
-                <img src="https://img.elo7.com.br/product/zoom/38C056C/poster-adesivo-minecraft-42-5x60cm-cartaz.jpg" alt="" height="250" width="200">
+                <img src="https://img.elo7.com.br/product/zoom/38C056C/poster-adesivo-minecraft-42-5x60cm-cartaz.jpg"
+                    alt="" height="250" width="200">
             </div>
             <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+        </section>
+
+        <section id="error">
+            <h2>Nenhum resultado encontrado</h2>
+            <p>Tente outro termo na pesquisa.</p>
         </section>
     </main>
 
@@ -123,49 +127,8 @@
         <p>&copy; 2025 Projeto CH 3º Série | Etec Sebrae</p>
     </footer>
 
-    <script>
-        function toggleText(button) {
-            const section = button.closest('.texto-expandivel');
-            const paragraph = section.querySelector('.conteudo ');
+    <script src="js.js">
 
-            if (paragraph.style.display === 'none') {
-                paragraph.style.display = 'block';
-                button.textContent = 'Mostrar menos';
-            } else {
-                paragraph.style.display = 'none';
-                button.textContent = 'Mostrar mais';
-            }
-        }
-
-        // Oculta todos os parágrafos inicialmente (opcional)
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll('.texto-expandivel .conteudo ').forEach(conteudo => {
-                conteudo.style.display = 'none';
-            });
-        });
-
-        //sistema de pesquisa:
-        function togglePesquisa() {
-            const campo = document.getElementById("campoPesquisa");
-            campo.style.display = campo.style.display === "none" ? "block" : "none";
-            if (campo.style.display === "block") {
-                campo.focus();
-            }
-        }
-
-        function filtrarTextos() {
-            const termo = document.getElementById("campoPesquisa").value.toLowerCase();
-            const secoes = document.querySelectorAll("section");
-
-            secoes.forEach(secao => {
-                const textoCompleto = secao.innerText.toLowerCase();
-                if (textoCompleto.includes(termo)) {
-                    secao.style.display = "block";
-                } else {
-                    secao.style.display = "none";
-                }
-            });
-        }
     </script>
 
 </body>
