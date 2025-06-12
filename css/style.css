@@ -8,7 +8,7 @@
 /* Fonte moderna */
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/fundo.png);
     background-size: cover;
     background-attachment: fixed;
     color: #333;
@@ -41,6 +41,7 @@ header {
     flex: 1;
     text-align: center;
     min-width: 200px;
+    overflow: hidden;
 }
 
 header h1 {
@@ -165,6 +166,7 @@ footer {
     padding: 2rem;
     border-top: 4px solid #0056b3;
     margin-top: 3rem;
+    font-size: 0.95rem;
 }
 
 /* Navegação */
@@ -223,8 +225,8 @@ html {
         flex-direction: column;
     }
 
-   .pesquisa-container input {
-        display: none; /* importante para manter o controle da visibilidade */
+    .pesquisa-container input {
+        display: none;
         width: 100%;
         margin-top: 10px;
         padding: 0.6rem 1rem;
