@@ -2,142 +2,91 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museu Etec Sebrae</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="imagex/png"
-        href="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museu Etec Sebrae</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png">
 </head>
 
 <body>
 
-    <header>
-        <div class="header-topo">
-            <img class="logo"
-                src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png"
-                alt="Logo Etec Sebrae">
-            <a href="https://www.etecsebrae.com/" class="btn-home-mobile"><button>Home</button></a>
-        </div>
-    
-        <div class="header-centro">
-            <h1>Centro de memórias virtual Etec Sebrae</h1>
-            <nav>
-                <span>Principais sugestões:</span>
-                <br>
-                <button onclick="location.href='#texto1'">Museu Etec Sebrae</button>
-                <button onclick="location.href='#texto2'">Biblioteca da Etec Sebrae</button>
-                <button onclick="location.href='#texto3'">Uniformes e Objetos</button>
-            </nav>
-        </div>
-    
-        <div class="header-direita">
-            <div class="pesquisa-container">
-                <button class="btn-abrir-pesquisa" onclick="togglePesquisa()">
-                    <img src="img/lupa.png" alt="Pesquisar" height="17px" width="22px">
-                </button>
-                <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()">
-            </div>
-        </div>
-    </header>
-    
-    
+  <header>
+    <div class="header-topo">
+      <img class="logo" src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png" alt="Logo Etec Sebrae">
+      <a href="https://www.etecsebrae.com/" class="btn-home-mobile"><button>Home</button></a>
+    </div>
 
-    <main>
+    <div class="header-centro fade-in">
+      <h1>Centro de Memórias Virtual Etec Sebrae</h1>
+      <nav>
+        <span>Principais sugestões:</span><br>
+        <button onclick="location.href='#texto1'">Museu Etec Sebrae</button>
+        <button onclick="location.href='#texto2'">Biblioteca da Etec Sebrae</button>
+        <button onclick="location.href='#texto3'">Uniformes e Objetos</button>
+      </nav>
+    </div>
 
-        <section id="texto1" class="texto-expandivel">
-            <h2>Museu Etec Sebrae: Sua origem e propósito</h2>
-            <div class="conteudo">
-                O site "Museu Etec Sebrae" foi criado com o objetivo de preservar a memória da escola, reunindo
-                conteúdos do passado e do presente. Nele, é possível encontrar camisas, objetos, registros de eventos e
-                marcos importantes da história da instituição.
-            </div>
-            <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-        </section>
+    <div class="header-direita">
+      <div class="pesquisa-container">
+        <button class="btn-abrir-pesquisa" onclick="togglePesquisa()">
+          <img src="img/lupa.png" alt="Pesquisar" height="17" width="22">
+        </button>
+        <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()">
+      </div>
+    </div>
+  </header>
 
-        <section id="texto2" class="texto-expandivel">
-            <h2>Biblioteca da Etec Sebrae: Conheça sua história</h2>
-            <div class="conteudo">
-                <p>
-                    A biblioteca se situava na Rua José Getúlio, 89, no terceiro andar.
-                    A estrutura da biblioteca era composta por sala de leitura ampla, anexa à biblioteca, terminais de
-                    pesquisa e mesa para visualização de vídeo (VHS e TV). O acervo era composto por doze estantes de
-                    livros e onze estantes de dvd's. Havia também o acervo de VHS e revistas na sala ao lado no terceiro
-                    andar.
-                </p>
-                <br>
-                <img src="img/biblioteca1.jpeg" alt="blibioteca">
-                <br>
-                <p>
-                    O software utilizado pela, biblioteca era o Thesaurus (antigo programa desenvolvido pela Viappia,
-                    hoje substituido pelo Chronus Web)
-                    Mudanças...
-                    Mudança do acervo (outubro/2011)
-                    A biblioteca do SEBRAE-SP foi transferida da Rua José Getúlio, 89 para o E.R. Centro, na rua
-                    Vergueiro, 1071, durante todo o mês de outubro de 2011.
-                    Para a mudança foi necessário reavaliar o acervo e doar materiais. Os critérios utilizados para
-                    doação dos materiais foram:
-                    O software utilizado pela biblioteca era o Thesaurus (antigo programa desenvolvido pela Viappia,
-                    hoje substituido pelo Chronus Web)
-                    Mudanças...
-                </p>
-                <br>
-                <p>
-                    Mudança do acervo (outubro/2011)
-                    A biblioteca do SEBRAE-SP foi transferida da Rua José Getúlio, 89 para o E.R. Centro, na rua
-                    Vergueiro,
-                    1071, durante todo o mês de outubro de 2011.
-                    Para a mudança foi necessário reavaliar o acervo e doar materiais. Os critérios utilizados para
-                    doação
-                    dos materiais foram:
-                </p>
-            </div>
+  <main>
 
-            <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+    <section id="texto1" class="texto-expandivel card fade-in">
+      <h2>Museu Etec Sebrae: Sua origem e propósito</h2>
+      <div class="conteudo">
+        O site "Museu Etec Sebrae" foi criado com o objetivo de preservar a memória da escola, reunindo conteúdos do passado e do presente. Nele, é possível encontrar camisas, objetos, registros de eventos e marcos importantes da história da instituição.
+      </div>
+      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+    </section>
 
-        </section>
+    <section id="texto2" class="texto-expandivel card fade-in">
+      <h2>Biblioteca da Etec Sebrae: Conheça sua história</h2>
+      <div class="conteudo">
+        <p>A biblioteca se situava na Rua José Getúlio, 89, no terceiro andar...</p>
+        <img src="img/biblioteca1.jpeg" alt="Biblioteca da Etec Sebrae" class="img-ajustada">
+        <p>O software utilizado pela biblioteca era o Thesaurus...</p>
+      </div>
+      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+    </section>
 
-        <section id="texto3" class="texto-expandivel">
-            <h2>Da Origem à Atualidade: Uniformes e Objetos da Etec Sebrae</h2>
-            <div class="conteudo">
-                <p>
-                    Desde o início da Etec Sebrae, a escola passou por várias mudanças em seus uniformes, materiais e
-                    objetos únicos. Neste espaço, será explorada essa trajetória de forma cronológica, da origem da
-                    instituição até os dias atuais.
-                </p>
-                <img src="" alt="">
-            </div>
-            <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-        </section>
+    <section id="texto3" class="texto-expandivel card fade-in">
+      <h2>Da Origem à Atualidade: Uniformes e Objetos da Etec Sebrae</h2>
+      <div class="conteudo">
+        <p>Desde o início da Etec Sebrae, a escola passou por várias mudanças...</p>
+        <img src="img/uniforme.jpg" alt="Uniformes Etec Sebrae" class="img-ajustada">
+      </div>
+      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+    </section>
 
-        <section id="texto4" class="texto-expandivel">
-            <h2>Projeto Mine: Explorando o Metaverso sem Barreiras</h2>
-            <div class="conteudo">
-                <h3>Como funciona?</h3>
-                <p>O projeto "Mine" foi desenvolvido pelos alunos da 3ª série do curso de Ciências Humanas e Sociais, em
-                    2025. O objetivo era criar um mundo virtual no jogo Minecraft para explicar, de forma prática, como
-                    funciona o metaverso. Foi construído um ambiente coletivo, com estruturas inspiradas na própria
-                    escola e desafios que tornaram a experiência mais dinâmica e envolvente.</p>
-                <img src="https://img.elo7.com.br/product/zoom/38C056C/poster-adesivo-minecraft-42-5x60cm-cartaz.jpg"
-                    alt="" height="250" width="200">
-            </div>
-            <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-        </section>
+    <section id="texto4" class="texto-expandivel card fade-in">
+      <h2>Projeto Mine: Explorando o Metaverso sem Barreiras</h2>
+      <div class="conteudo">
+        <h3>Como funciona?</h3>
+        <p>O projeto "Mine" foi desenvolvido pelos alunos da 3ª série...</p>
+        <img src="https://img.elo7.com.br/product/zoom/38C056C/poster-adesivo-minecraft-42-5x60cm-cartaz.jpg" alt="Projeto Mine" class="img-ajustada">
+      </div>
+      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
+    </section>
 
-        <section id="error">
-            <h2>Nenhum resultado encontrado</h2>
-            <p>Tente outro termo na pesquisa.</p>
-        </section>
-    </main>
+    <section id="error">
+      <h2>Nenhum resultado encontrado</h2>
+      <p>Tente outro termo na pesquisa.</p>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Projeto CH 3º Série | Etec Sebrae</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Projeto CH 3º Série | Etec Sebrae</p>
+  </footer>
 
-    <script src="js.js">
-
-    </script>
+  <script src="js.js"></script>
 
 </body>
-
 </html>
