@@ -135,6 +135,14 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+ main section img {
+      max-width: 250px;
+      height: auto;
+      display: block;
+      margin: 0.5rem auto;
+      border-radius: 12px;
+    }
+
 section h2 {
   font-size: 1.6rem;
   color: #042c5c;
@@ -174,4 +182,101 @@ footer {
     padding: 1rem 0.5rem;
     /* Ou padding: 0; para zero total */
   }
+}
+
+/* RESPONSIVIDADE */
+
+/* Header responsivo */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.5rem;
+        padding-top: 80px;
+    }
+    .pesquisa-container {
+        padding: 20px 10%;
+    }
+    .pesquisa-container input {
+        font-size: 1.1rem;
+    }
+    .logo {
+        height: 60px;
+        margin: 15px;
+    }
+    header a.btn-home {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+ 
+    .pesquisa-container {
+        padding: 15px 5%;
+    }
+    .pesquisa-container input {
+        font-size: 1rem;
+        width: 100%;
+    }
+    .logo {
+        height: 50px;
+        margin: 10px;
+    }
+    header a.btn-home {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Slide responsivo */
+@media (max-width: 992px) {
+    .slideDef h4 {
+        font-size: 1.5rem;
+    }
+    .item {
+        aspect-ratio: 16 / 9; /* mantém a proporção */
+    }
+    .overlay h2 {
+        font-size: 1.3rem;
+    }
+    .overlay p {
+        font-size: 0.9rem;
+    }
+    .arrow-left, .arrow-right {
+        width: 45px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slideDef h4 {
+        font-size: 1.3rem;
+    }
+    .item {
+       aspect-ratio: 4 / 3;  /* em celulares, um pouco mais quadrado */
+    }
+    .overlay {
+        max-height: 60%;
+        padding: 10px 15px;
+    }
+    .overlay h2 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    .overlay p {
+        font-size: 0.8rem;
+    }
+    .arrow-left, .arrow-right {
+        width: 35px;
+        font-size: 20px;
+    }
+}
+
+/* Cards responsivos */
+@media (max-width: 576px) {
+    .card-body h5 {
+        font-size: 1.1rem;
+    }
+    .card-body p {
+        font-size: 0.9rem;
+    }
 }
