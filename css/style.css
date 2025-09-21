@@ -114,49 +114,57 @@ button.btn-quadrado {
 
 /*PESQUISA*/
 .pesquisa-container {
-    display: block;
-    align-items: end;
-    gap: 10px;
-    padding: 30px 25%;
+  display: flex;
+  flex-direction: column; /* botão em cima, input embaixo */
+  align-items: center;    /* centraliza os dois */
+  gap: 0.5rem;
+  margin-top: 40px;
+}
+
+.pesquisa-container button {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.pesquisa-container button:hover {
+  transform: scale(1.1);
+  color: #00bfff;
 }
 
 .pesquisa-container input {
-    display: none;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background: transparent;
-    color: white;
-    border: none;
-    border-bottom: 2px solid white;
-    outline: none;
-    position: relative;
+  max-width: 0;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: white;
+  transition: all 0.4s ease;
+  pointer-events: none; /* desativa enquanto oculto */
+outline: none; /* remove a borda padrão ao focar */
+ min-width: 20%; /* largura quando aberto */
+  max-width: 40%; /* ocupa 80% da largura da tela */
 }
 
 .pesquisa-container input.ativo {
-    display: block;
-}
-
-.pesquisa-container input::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: white;
-    transition: width 0.3s ease;
-}
-
-.pesquisa-container input:focus::after {
-    width: 100%;
+  min-width: 30%; /* largura quando aberto */
+  max-width: 80%; /* ocupa 80% da largura da tela */
+  opacity: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 2px solid white;
+  pointer-events: auto; /* ativa quando visível */
+ outline: none; /* remove a borda padrão ao focar */
 }
 
 .pesquisa-container input::placeholder {
-    color: rgba(255, 255, 255, 0.8);
-    opacity: 1;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
 }
-
 /*MAIN E SECTIONS*/
 main {
     animation: fadeIn 0.8s ease-in-out;
@@ -251,7 +259,21 @@ section h3 {
     /* Centraliza os cards na linha */
     padding: 20px;
     background-color: #ffffff;
+      
 }
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.card img {
+  transition: transform 0.4s ease;
+}
+
 
 .cardLink {
     flex: 1 1 calc(33% - 20px);
@@ -299,20 +321,33 @@ section h3 {
 }
 
 /* Faixa que segura os slides */
-.gallery-wrapper {
-    overflow: hidden;
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
 .gallery {
     display: flex;
     transition: transform 0.6s ease-in-out;
     width: 100% !important;
     max-width: 100% !important;
     flex-wrap: nowrap;
+    touch-action: pan-y; /* Permite scroll vertical da página, mas prioriza horizontal no carrossel */
+    user-select: none; /* Evita seleção de texto durante arrasto */
+    -webkit-user-select: none; /* Para Safari/iOS */
 }
-
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100% !important;
+    max-width: 100% !important;
+    touch-action: pan-y; /* Mesma regra para o wrapper */
+}
+/* Para mobile: esconde setas se quiser (opcional, com media query) */
+@media (max-width: 768px) {
+    .arrow-left,
+    .arrow-right {
+        display: none; /* Opcional: esconde setas em mobile, já que swipe é prioritário */
+    }
+    
+    .item {
+        min-width: 100% !important; /* Garante full-width em mobile */
+    }
+}
 /* Cada slide */
 .item {
   position: relative;
