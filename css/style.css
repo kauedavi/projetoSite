@@ -1,63 +1,80 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Fonte moderna */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(../img/fundo.png);
+    background-color: #f5f7fa;
     background-size: cover;
     background-attachment: fixed;
     color: #333;
     line-height: 1.6;
 }
 
-/* Header */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*HEADER*/
 header {
-    background-color: #042c5c;
+    height: 150px;
+    min-height: 450px;
+    background-image: url(../img/bkgDef.png);
     color: white;
-    padding: 1rem 2rem;
-    border-bottom: 4px solid #0056b3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     animation: fadeInDown 0.6s ease-in-out;
-}
-
-.header-esquerda,
-.header-direita {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.header-centro {
-    flex: 1;
-    text-align: center;
-    min-width: 200px;
-    overflow: hidden;
 }
 
 header h1 {
     font-size: 2rem;
     font-weight: 600;
+    padding-top: 100px;
+}
+
+.esquerda,
+.direita {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.centro {
+    display: block;
+    text-align: center;
 }
 
 .logo {
     height: 50px;
-    max-width: 100%;
+    margin: 10px;
 }
 
-/* Botões padrão */
+header a.btn.btn-home {
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: white;
+    font-size: large;
+    display: inline-block;
+    float: right;
+    transition: all 0.3s ease;
+}
+
+header a.btn.btn-primary:hover {
+    background-color: #0071e3;
+}
+
+/*BOTÕES*/
 button {
     font-family: inherit;
-    margin: 0.3rem;
+    margin: 5px;
     padding: 0.6rem 1.4rem;
     font-size: 1rem;
     background-color: #0056b3;
@@ -73,56 +90,80 @@ button:hover {
     transform: translateY(-2px) scale(1.02);
 }
 
-/* Botões quadrados */
 button.btn-quadrado {
     border-radius: 8px;
     font-weight: 600;
+    background-color: transparent;
+    color: #ffffff;
 }
 
-/* Campo de pesquisa */
+.btn-home-topico {
+    background-color: #f0f8ff;
+    color: #042c5c;
+    border: 2px solid #0056b3;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-home-topico:hover {
+    background-color: #e0f0ff;
+    transform: translateY(-2px) scale(1.02);
+}
+
+/*PESQUISA*/
 .pesquisa-container {
-    display: flex;
-    align-items: center;
+    display: block;
+    align-items: end;
     gap: 10px;
+    padding: 30px 25%;
 }
 
 .pesquisa-container input {
     display: none;
-    width: 220px;
+    width: 100%;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 2px solid #ccc;
-    background-color: #f5f7fa;
     font-size: 1rem;
-    color: #042c5c;
-    transition: all 0.3s ease;
+    background: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid white;
     outline: none;
+    position: relative;
 }
 
 .pesquisa-container input.ativo {
     display: block;
 }
 
-.pesquisa-container input:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
-    background-color: white;
+.pesquisa-container input::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
 }
 
-/* Botão de pesquisa */
-.btn-abrir-pesquisa {
-    font-weight: 600;
+.pesquisa-container input:focus::after {
+    width: 100%;
 }
 
-/* Main */
+.pesquisa-container input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+}
+
+/*MAIN E SECTIONS*/
 main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1.2rem;
     animation: fadeIn 0.8s ease-in-out;
+    padding-bottom: 10px;
+     background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
 }
 
-/* Seções */
 section {
     background-color: #ffffff;
     margin-bottom: 2rem;
@@ -149,7 +190,17 @@ section h3 {
     color: #0056b3;
 }
 
-/* Imagens */
+.text-gradient {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(270deg, #0071e3, #000000);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 4s ease infinite;
+}
+
+/*IMAGENS*/
 #img {
     display: flex;
     flex-wrap: wrap;
@@ -162,9 +213,12 @@ section h3 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-#img img {
-    max-width: 300px;
+#img img,
+.card-img-top {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     width: 100%;
+    display: block;
     border-radius: 12px;
     transition: transform 0.3s ease;
 }
@@ -173,38 +227,217 @@ section h3 {
     transform: scale(1.05);
 }
 
-/* Footer */
+.areaPesquisa {
+    width: 100%;
+    padding: 10px;
+    background-color: #06478b;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.textGif {
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Espaço entre os cards */
+    justify-content: center;
+    /* Centraliza os cards na linha */
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.cardLink {
+    flex: 1 1 calc(33% - 20px);
+    /* Ocupa 50% menos o gap */
+    max-width: calc(33% - 20px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .cardLink {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/*CARROSSEL*/
+/* ========================
+   CARROSSEL - VERSÃO FINAL
+======================== */
+
+.slideDef {
+    width: 100%;
+    padding: 40px 20px;
+    position: relative;
+    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
+    border-radius: 12px;
+}
+
+.slideDef h4 {
+    text-align: center;
+    color: #0071e3;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Container do carrossel */
+.container {
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    border-radius: 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Faixa que segura os slides */
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-wrap: nowrap;
+}
+
+/* Cada slide */
+.item {
+    position: relative;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: 490px;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    /* garante que a imagem sempre preencha */
+    object-position: center center;
+    /* centraliza */
+    transform: none !important;
+    /* remove zoom para evitar cortes */
+    transition: transform 0.6s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Slide ativo */
+.current-item {
+    opacity: 1;
+    transform: scale(1.01);
+    z-index: 1;
+}
+
+/* Texto dentro do slide */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+    border-radius: 0 0 12px 12px;
+}
+
+.overlay h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.overlay p {
+    margin: 8px 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Botões de navegação */
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    font-size: 32px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s, background 0.3s;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.25;
+    padding: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.arrow-left {
+    left: 0;
+    background: linear-gradient(to left, transparent 0%, rgba(0, 123, 255, 0.8) 100%);
+}
+
+.arrow-right {
+    right: 0;
+    background: linear-gradient(to right, transparent 0%, rgba(0, 123, 255, 0.8) 100%);
+    border-radius: 8px 0 0 8px;
+}
+
+.arrow-left:hover {
+    opacity: 1;
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
+}
+
+.arrow-right:hover {
+    opacity: 1;
+    background: linear-gradient(to left, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer {
     background-color: #042c5c;
     color: white;
     text-align: center;
     padding: 2rem;
     border-top: 4px solid #0056b3;
-    margin-top: 3rem;
     font-size: 0.95rem;
 }
 
-/* Navegação */
-nav.navegacao {
-    background-color: #004f99;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav.navegacao button {
-    background-color: white;
-    color: #004f99;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* Erros */
+/* =========================
+   ERRO
+========================= */
 #error {
     display: none;
     text-align: center;
     color: red;
+    margin-top: 50px;
     padding: 20px;
     background-color: #ffe5e5;
     border: 1px solid #ffaaaa;
@@ -212,77 +445,88 @@ nav.navegacao button {
     font-family: sans-serif;
 }
 
-.header-topo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-/* Scroll suave */
-html {
-    scroll-behavior: smooth;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Animações */
+/* =========================
+   ANIMAÇÕES
+========================= */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Responsividade */
-@media (max-width: 700px) {
-    header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 1rem;
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
     }
 
-    .header-topo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+    50% {
+        background-position: 100% 50%;
     }
 
-    .header-topo .logo {
-        height: 45px;
+    100% {
+        background-position: 0% 50%;
     }
+}
 
-    .btn-home-mobile {
-        margin-left: auto;
-    }
+.slide-container {
+    max-width: 1200px;
+    /* ou o valor desejado para desktop */
+    margin: 0 auto;
+    /* centraliza horizontalmente */
+    padding: 0 20px;
+    /* espaçamento lateral no desktop */
+    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
+}
 
-    .header-centro {
-        text-align: center;
-        margin: 1rem 0;
-    }
-
-    .header-direita {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 0.5rem;
-    }
-
-    #img img {
+/* No mobile, remove margens e padding para ocupar 100% */
+@media (max-width: 768px) {
+    .slide-container {
         max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
+}
+
+.item picture, 
+.item picture img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  transform: none !important;
+  transition: transform 0.6s ease;
 }

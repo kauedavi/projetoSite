@@ -4,263 +4,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Centro de memória</title>
+  <title>Centro de Memória</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/responsividade.css">
   <link rel="shortcut icon" type="image/png"
-    href="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png">
+    href="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
   <header>
-    <div class="header-topo">
-      <img class="logo"
-        src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png/v1/fill/w_73,h_47,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/branco_edited.png"
+    <div class="esquerda">
+      <img class="logo" src="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png"
         alt="Logo Etec Sebrae">
-      <a href="https://www.etecsebrae.com/" class="btn-home-mobile"><button>Home</button></a>
     </div>
 
-    <div class="header-centro fade-in">
-      <h1>Centro de Memória Virtual Etec Sebrae</h1>
-      <nav>
-        <span>Principais sugestões:</span><br>
-        <button onclick="location.href='#texto1'">Etec Sebrae</button>
-        <button onclick="location.href='#texto2'">Biblioteca da Etec Sebrae</button>
-        <button onclick="location.href='#texto3'">Uniformes e Objetos</button>
-      </nav>
+    <div class="direita">
+      <a href="https://www.etecsebrae.com/" class="btn btn-home">Home</a>
     </div>
 
-    <div class="header-direita">
+    <div class="centro">
+      <h1>Centro de Memória Virtual</h1>
       <div class="pesquisa-container">
-        <button class="btn-abrir-pesquisa" onclick="togglePesquisa()">
-          <img src="img/lupa.png" alt="Pesquisar" height="17" width="22">
-        </button>
-        <input type="text" id="campoPesquisa" placeholder="Pesquisar..." oninput="filtrarTextos()">
+        <button class="btn-quadrado " onclick="togglePesquisa()"><img src="img/lupa.png" alt="" width="20px"
+            height="25px"></button>
+        <input type="text" id="campoPesquisa" placeholder="Pesquisar..." onkeyup="filtrarTextos()">
       </div>
     </div>
   </header>
 
   <main>
 
-    <section id="texto1" class="texto-expandivel card fade-in">
-      <h2>Etec Sebrae: Sua origem e propósito</h2>
-      <div class="conteudo">
-        O site <strong>"Centro de Memória Virtual"</strong> foi criado com o objetivo de preservar a memória da escola, reunindo conteúdos do
-        passado e do presente. Nele, é possível encontrar camisas, objetos, registros de eventos e marcos importantes da
-        história da instituição.
-      </div>
-      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-    </section>
+    <!-- CARROSSEL -->
+    <div class="slide-container">
+      <div class="slideDef">
 
-    <section id="texto2" class="texto-expandivel card fade-in">
-      <h2>Biblioteca da Etec Sebrae: Conheça sua história</h2>
-      <div class="conteudo">
-        <p>
-          A biblioteca se situava na Rua José Getúlio, 89, no terceiro andar. A estrutura da biblioteca era composta por
-          sala de leitura ampla, anexa à biblioteca, terminais de pesquisa e
-          mesa para visualização de vídeo (VHS e TV). O acervo era composto por doze estantes de livros e onze estantes
-          de dvd's. Havia também o acervo de VHS e revistas na sala ao lado no terceiro andar.
-        </p>
-        <img src="img/biblioteca1.jpeg" alt="Biblioteca da Etec Sebrae" class="img-ajustada">
-        <p>
-          A estrutura da biblioteca era composta por sala de leitura ampla, anexa à biblioteca, terminais de pesquisa e
-          mesa para visualização de vídeo (VHS e TV). O acervo era composto por doze estantes de livros e onze estantes
-          de dvd's. Havia também o acervo de VHS e revistas na sala ao lado no terceiro andar.
-        </p>
-        <img src="img/img bl2.jpg" alt="">
-        <p>
-          O software utilizado pela biblioteca era o Thesaurus (antigo programa desenvolvido pela Viappia, hoje
-          substituido pelo Chronus Web)
-        </p>
-        <h3>mudanças</h3>
-        <p>
-          A biblioteca do SEBRAE-SP foi transferida da Rua José Getúlio, 89 para o E.R. Centro, na rua Vergueiro, 1071,
-          durante todo o mês de outubro de 2011.
-        </p>
-        <h3>Como a bliblioteca é?</h3>
-        <br>
-        <img src="img/blbl 3f2.jpg" alt="">
-        <br>
-        <strong>Número de títulos cadastrados no acervo</strong>
-        <p>
-          <strong>Livros:</strong> aprox. 5.200 livros
-          Acervo especializado na área empresarial que contribui com o aprendizado, auxiliando, desenvolvendo e
-          consolidando a força empreendedora, colaborando assim para a implantação, estruturação e desenvolvimento dos
-          pequenos negócios.
-          Principais temas: Administração de empresas, Marketing, Vendas, Atendimento a clientes,
-          Qualidade, Franquia, Recursos Humanos, Produção, Finanças, Contabilidade, Direito, Comércio Exterior, Turismo,
-          Artesanato, Cultura, Empreendedorismo, Gestão empresarial, Agronegócio, Agroindústria, Agricultura, Criação de
-          animais, Microempresa, Pequena empresa, entre outros materiais, que auxiliam o empreendedor ou futuro
-          empreendedor na busca de novas oportunidades de negócios.
-          <strong>DVD:</strong> 800 títulos
-        </p>
-        <h3>Sistema de Gerenciamento da Biblioteca</h3>
-        <strong>Chronus OPAC</strong>
-        <p>
-          Plataforma de gerenciamento de bibliotecas desenvolvida pela Viappia em parceria com o SEBRAE Nacional.
-        </p>
-        <br>
-        <li>
-          O projeto Biblioteca Interativa SEBRAE (BIS) propõe um novo CDI. Um CDI que não se restringe às quatro paredes
-          e fechado exclusivamente nos processos tradicionais de biblioteca, como processamento técnico do acervo físico
-          e eventuais empréstimos e vendas de livros. É necessário que cada gestor de CDI reposicione esse setor
-          estrategicamente, por meio de um conjunto de inovações que vão desde a adoção de novas tecnologias até a
-          implantação de novos processos, produtos e serviços de atendimento.
-        </li>
-        <br>
-        <a href="http://bibliotecainterativasebrae.blogspot.com/">site do projeto BIS</a>
-        <br>
-        <h3>Cine empreendedor</h3>
-        <li>
-          Sessão de cinema para pequenos e micro empreendedores com projeção de filmes temáticos da biblioteca do
-          SEBRAE-SP. A sessão será acompanhada por um analista/consultor para mediar um debate ao término da sessão. O
-          projeto está em processo de elaboração.
-        </li>
-        <br>
-        <h3>Acervo Digital/E-book</h3>
-        <li>
-          Inserção de novo suporte, digital, para ampliar o acesso dos colaboradores à informação. Acompanhar as novas
-          tendências tecnológicas para aperfeiçoar os serviços da biblioteca. Em fase de processamento.
-        </li>
-        <br>
-        <h3>Visual Marketing</h3>
-        <li>
-          Desenvolvimento de identidade visual para a biblioteca do SEBRAE-SP. Criação de produto para melhor divulgar a
-          biblioteca: marca páginas customizadas.
-        </li>
-        <br>
-        <h3>Disseminação Seletiva de Periódicos Especializados / Clipping / RSS</h3>
-        <li>
-          Serviço de disseminação seletiva de informação em conjunto com os "Novos Canais" do Sebrae. Captura e seleção
-          de matérias pertinentes ao contexto Sebrae, em forma de informe disponibilizado na intranet.
-        </li>
-        <br>
-        <h3>Assinatura de periódicos</h3>
-        <li>
-          Assinatura de revistas impressas e eletrônicas para os colaboradores do SEBRAE-SP
-        </li>
-        <br>
-        <strong>Bibliotecário</strong>
-        <p>
-          Felipe Pereira Alexandrino dos Santos
-          Bacharel em Biblioteconomia e Ciência da Informação pela FESP Pós-Graduando do curso de Gestão de Patrimônio e
-          Cultura da UNIFAI
-        </p>
-        <h3>Sistema de Classificação dos materiais</h3>
-        <p>CDU(classificação Decimal Universal)</p>
-        <br>
-        <h3>Número de empréstimos(2011)</h3>
-        <p>emprestimo de material(2011)</p>
-        <img src="img/stats.jpg" alt="">
-        <br>
-        <h3>Serviços oferecidos pelo CDI</h3>
-        <br>
-        <li>
-          Catálogo online do acervo da biblioteca do Centro de Documentação e Informação do com SEBRAE-SP, que contém
-          mais de cinco mil livros base na temática do empreendedorismo e gêneros complementares (administração,
-          estratégia empresarial, plano de negócios, gestão do conhecimento, marketing comércio exterior, recursos
-          humanos, agronegócios, gestão empresarial, entre outros).
-        </li>
-        <br>
-        <li>
-          Informe de novos livros (Recém Chegados) cadastrados no acervo e disponibilizados periodicamente a cada três
-          semanas na Intranet (Publica Web).
-        </li>
-        <br>
-        <li>
-          Informe de novos livros (Recém Chegados) cadastrados no acervo e disponibilizados periodicamente a cada três
-          semanas na Intranet (Publica Web).
-        </li>
+        <h4 class="text-gradient">Confira nossos principais projetos</h4>
+        <div class="container">
+          <div class="gallery-wrapper">
 
-        <br>
-        <h3>Como foi...</h3>
-        <p>A biblioteca do CDI SEBRAE-SP, nos anos passados, era composta por uma equipe de bibliotecários, gerenciados
-          pelas profissionais Gláucia e Rúbia, que tinha como principal objetivo atender candidatos à empreendedores,
-          empreendedores formalizados e estudantes em geral.</p>
-      </div>
-      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-    </section>
+            <div class="gallery">
 
-    <section id="texto3" class="texto-expandivel card fade-in">
-      <h2>Da Origem à Atualidade: Uniformes e Objetos da Etec Sebrae</h2>
-      <div class="conteudo">
-        <p>Essa matéria tem como objetivo descrever e analisar os itens de apoio visual e institucional
-          oferecidos pelo Sebrae-SP, por meio da Escola de Negócios, aos alunos envolvidos em iniciativas
-          empreendedoras. Por meio de elementos como mochilas, estojos e uniformes personalizados, observa-se o cuidado
-          com a identidade visual, a valorização do empreendedorismo e o incentivo à construção de uma imagem
-          profissional desde os primeiros passos no ambiente educacional. Os objetos descritos neste relatório não são
-          apenas utilitários, mas carregam consigo simbologias que fortalecem o vínculo dos estudantes com a proposta de
-          inovação, desenvolvimento e excelência promovida pela parceria entre o Sebrae e instituições como a ETEC.</p>
-        <img src="img/mochila.png" alt="mochila Etec Sebrae" class="img-ajustada">
-        <p>
-          A mochila É preta, com linhas sóbrias e utilitárias feita de tecido resistente e costura reforçada. No bolso
-          frontal, bem centralizado, o logo da Escola de Negócios domina o espaço com orgulho: o “EM”, em letras
-          modernas, é acompanhado por um símbolo geométrico multicolorido, que sugere diversidade, dinamismo e movimento
-          – elementos centrais na vida empreendedora. Abaixo do logotipo, em letras brancas e firmes, lê-se: “ESCOLA DE
-          NEGÓCIOS”. A mochila É preta, com linhas sóbrias e utilitárias feita de tecido resistente e costura reforçada.
-          No bolso frontal, bem centralizado, o logo da Escola de Negócios domina o espaço com orgulho: o “EM”, em
-          letras modernas, é acompanhado por um símbolo geométrico multicolorido, que sugere diversidade, dinamismo e
-          movimento – elementos centrais na vida empreendedora. Abaixo do logotipo, em letras brancas e firmes, lê-se:
-          “ESCOLA DE NEGÓCIOS”.
-        </p>
-        <img src="img/estojo.png" alt="" class="img-ajustada">
-        <p>
-          Na imagem, há um estojo azul com os logotipos da Escola de Negócios Sebrae-SP Alencar Burti e do Sebrae-SP,
-          instituições que simbolizam conhecimento, inovação e apoio ao empreendedorismo. O design moderno, com linhas
-          retas e cores vibrantes, reflete dinamismo, profissionalismo e transformação. Mais do que um simples objeto,
-          este estojo carrega o significado de quem busca crescimento, aprendizado e desenvolvimento. Ele representa a
-          jornada de empreendedores que, com o apoio do Sebrae, transformam ideias em negócios e desafios em
-          oportunidades.
-        </p>
-        <img src="img/uniforme1.png" alt="" class="img-ajustada">
-        <p>
-          Cor predominante azul com detalhes brancos, o que remete à identidade visual do Sebrae.
-          O logotipo "EN" e a inscrição “Escola de Negócios Sebrae-SP” representam a proposta da instituição de ser uma
-          escola voltada exclusivamente para negócios.
-          O gráfico com formas triangulares e geométricas remete ao conceito de construção e inovação — muito alinhado à
-          ideia de empreendedorismo.
-          As inscrições nas mangas fazem referência ao Sebrae-SP, reforçando a parceria institucional.
-        </p>
-        <img src="img/uniforme2.png" alt="" class="img-ajustada">
-        <p>
-          Esta é uma blusa polo de manga curta, na cor azul royal vibrante, feita provavelmente de poliéster ou algodão
-          misto, tecido leve e confortável — muito usado em uniformes escolares e institucionais.
-          Ela possui gola tradicional de polo, com dois botões no colarinho. No lado esquerdo do peito, há um bordado
-          com o logotipo da ETEC (Escola Técnica Estadual) — identificado pelas letras "EN" e pela expressão "ESCOLA DE
-          EDUCAÇÃO EXCELÊNCIA" bordada logo abaixo. O logo também apresenta um pequeno símbolo geométrico colorido
-          (amarelo, verde e azul), remetendo às cores da bandeira do Brasil, reforçando a identidade educacional pública
-          paulista.
-        </p>
-        <br>
-        <p>Participantes da pesquisa: Fernanda Viana, Gabriela Ferreira, Miguel Mello e Thais Luana. </p>
-      </div>
-      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-    </section>
+              <div class="item" onclick="location.href='historia_sebrae.html'">
+                <picture>
+                  <source srcset="img/imgMob/sebraeMob.png" media="(max-width: 768px)">
+                  <img src="img/etec-sebrae.jpg" alt="Etec Sebrae" />
+                </picture>
+                <div class="overlay">
+                  <h2>Etec Sebrae: Onde o Empreendedorismo Ganha Forma</h2>
+                  <p>Descubra como nasceu a Etec Sebrae, sua missão transformadora e os valores que moldam futuros líderes e inovadores.</p>
+                </div>
+              </div>
 
-    <section id="texto4" class="texto-expandivel card fade-in">
-      <h2>Projeto Mine: Explorando o Metaverso sem Barreiras</h2>
-      <div class="conteudo">
-        <h3>Como funciona?</h3>
-        <p>O projeto "Mine" foi desenvolvido pelos alunos da 3ª série...</p>
-        <img src="https://img.elo7.com.br/product/zoom/38C056C/poster-adesivo-minecraft-42-5x60cm-cartaz.jpg"
-          alt="Projeto Mine" class="img-ajustada">
+
+              <div class="item" onclick="">
+                <picture>
+                  <source srcset="img/imgMob/centroMob.png" media="(max-width: 768px)"  >
+                  <img src="img/CentroDeMemoria.jpeg" alt="Centro de Memória" />
+                </picture>
+                <div class="overlay">
+                  <h2>Centro de Memória: A História em um só lugar</h2>
+                  <p>Explore os registros, conquistas e lembranças que eternizam a trajetória da Etec Sebrae e inspiram novas gerações.</p>
+                </div>
+              </div>
+
+              <div class="item current-item" onclick="location.href='pagina_biblioteca.html'">
+                <picture>
+                  <source srcset="img/imgMob/bibliMob.png" media="(max-width: 768px)">
+                  <img src="img/bibliotecaSlide.jpg" alt="Biblioteca" />
+                </picture>
+                <div class="overlay">
+                  <h2>Biblioteca Etec Sebrae: Conhecimento Que Transforma</h2>
+                  <p>Mergulhe em um acervo especializado em negócios e empreendedorismo, onde cada título é uma porta para o sucesso.</p>
+                </div>
+              </div>
+
+              <div class="item" onclick="location.href='pagina_uniformes.html'">
+                <picture>
+                  <source srcset="img/imgMob/uniformeMob.png" media="(max-width: 768px)">
+                  <img src="img/UniForme.png" alt="Uniforme" />
+                </picture>
+                <div class="overlay">
+                  <h2>Uniforme Etec Sebrae: Vestindo o Propósito</h2>
+                  <p>Mais que vestimenta: o uniforme representa identidade, inovação e o orgulho de fazer parte da instituição.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <button class="arrow-left control">&#10094;</button>
+          <button class="arrow-right control">&#10095;</button>
+
+        </div>
       </div>
-      <button class="toggle-btn" onclick="toggleText(this)">Mostrar mais</button>
-    </section>
+
+    </div>
+
+    <div class="areaPesquisa">
+      <p class="textGif">Pesquisas:</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+      <div class="cardLink">
+        <div class="card h-100" onclick="location.href='pagina_biblioteca.html'">
+          <img src="img/99d571_783c1bde898041a7a9844bf991a8e09b~mv2_d_3264_2448_s_4_2.avif" class="card-img-top"
+            alt="Biblioteca Etec Sebrae">
+          <div class="card-body">
+            <h5 class="card-title">Biblioteca da Etec Sebrae</h5>
+            <p class="card-text">Conheça a história, acervo e projetos da biblioteca do SEBRAE-SP.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardLink">
+        <div class="card h-100" onclick="location.href='pagina_uniformes.html'">
+          <img src="img/UniCap.png" class="card-img-top" alt="Uniformes e Objetos">
+          <div class="card-body">
+            <h5 class="card-title">Uniformes e Objetos</h5>
+            <p class="card-text">Explore os itens visuais e institucionais oferecidos aos alunos pelo Sebrae-SP.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardLink">
+        <div class="card h-100" onclick="location.href='entrevista.html'">
+          <img src="img/entrevistaCapa.jpeg" class="card-img-top" alt="Projeto Mine">
+          <div class="card-body">
+            <h5 class="card-title">Entrevista</h5>
+            <p class="card-text">Entrevista feita pelos alunos aos representantes da instituição.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardLink">
+        <div class="card h-100" onclick="location.href='coresSebrae.html'">
+          <img src="img/Baixar conceito de fundo de triângulo abstrato em combinação de cores vermelha e branca gratuitamente.jpeg" class="card-img-top" alt="Projeto Mine">
+          <div class="card-body">
+            <h5 class="card-title">Cores</h5>
+            <p class="card-text">Cores e seus significados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cardLink">
+        <div class="card h-100" onclick="location.href='imagem.html'">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmIxxshjIJo6NgPEP9cE6cC2kZ_ITaQD64_Q&s" class="card-img-top" alt="Projeto Mine">
+          <div class="card-body">
+            <h5 class="card-title">Imagem</h5>
+            <p class="card-text">Imagem da  instituição.</p>
+          </div>
+        </div>
+      </div>
+
+       <div class="cardLink">
+        <div class="card h-100" onclick="location.href='historia_sebrae.html'">
+          <img src="https://sp.agenciasebrae.com.br/wp-content/uploads/sites/25/2023/11/53322065092_d20362c4d0_k.jpg" class="card-img-top" alt="Projeto Mine">
+          <div class="card-body">
+            <h5 class="card-title">história</h5>
+            <p class="card-text">história da instituilçao</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <section id="error">
       <h2>Nenhum resultado encontrado</h2>
       <p>Tente outro termo na pesquisa.</p>
     </section>
+
   </main>
 
-  <footer>
+  <footer class="text-center py-4 bg-dark text-white">
     <p>&copy; 2025 Projeto CH 3º Série | Etec Sebrae</p>
-    <p class="desc">Esse Projeto foi relizado com o auxilio do assitente técnico Arthur Jacinto de Oliveira Santos</p>
+    <p class="desc">Esse Projeto foi realizado com o auxílio do assistente técnico Arthur Jacinto de Oliveira Santos</p>
   </footer>
-
   <script src="js.js"></script>
-
+  <script src="slide.js"></script>
 </body>
 
 </html>

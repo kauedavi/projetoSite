@@ -1,59 +1,61 @@
-function toggleText(button) {
-  const section = button.closest(".texto-expandivel");
-  const paragraph = section.querySelector(".conteudo ");
-
-  if (paragraph.style.display === "none") {
-    paragraph.style.display = "block";
-    button.textContent = "Mostrar menos";
-  } else {
-    paragraph.style.display = "none";
-    button.textContent = "Mostrar mais";
-  }
-}
-
-// Oculta todos os parágrafos inicialmente (opcional)
-document.addEventListener("DOMContentLoaded", () => {
-  document
-    .querySelectorAll(".texto-expandivel .conteudo ")
-    .forEach((conteudo) => {
-      conteudo.style.display = "none";
-    });
-});
-
-//sistema de pesquisa:
+// Toggle do campo de pesquisa
 function togglePesquisa() {
   const campo = document.getElementById("campoPesquisa");
   if (campo.style.display === "none" || campo.style.display === "") {
     campo.style.display = "block";
-    campo.focus(); // dá foco ao campo automaticamente
+    campo.focus();
   } else {
     campo.style.display = "none";
   }
 }
 
-//sistema de filtro
 function filtrarTextos() {
-  const termo = document.getElementById("campoPesquisa").value.toLowerCase();
-  const secoes = document.querySelectorAll("main section:not(#error)");
+  const termo = document.getElementById("campoPesquisa").value.toLowerCase().trim();
+
+  const main = document.querySelector("main");
+  const slideContainer = main.querySelector(".slide-container");
+  const cardsContainer = main.querySelector(".cards");
+  const errorSection = document.getElementById("error");
+
+  if (termo === "") {
+    // Se o campo estiver vazio, mostra o slide e os cards, esconde erro
+    slideContainer.style.display = "block";
+    cardsContainer.style.display = "flex"; // ou block, conforme seu CSS
+    errorSection.style.display = "none";
+
+    // Mostra todos os cards
+    const cards = cardsContainer.querySelectorAll(".cardLink");
+    cards.forEach(card => {
+      card.style.display = "block";
+    });
+    return;
+  }
+
+  // Se tem termo, esconde o slide para dar prioridade aos cards
+  slideContainer.style.display = "none";
+
+  // Filtra os cards
+  const cards = cardsContainer.querySelectorAll(".cardLink");
   let encontrou = false;
 
-  secoes.forEach((secao) => {
-    const titulo = secao.querySelector("h2");
-    const textoTitulo = titulo ? titulo.innerText.toLowerCase() : "";
+  cards.forEach(card => {
+    const titulo = card.querySelector(".card-title");
+    const texto = titulo ? titulo.innerText.toLowerCase() : "";
 
-    if (textoTitulo.includes(termo)) {
-      secao.style.display = "block";
+    if (texto.includes(termo)) {
+      card.style.display = "block";
       encontrou = true;
     } else {
-      secao.style.display = "none";
+      card.style.display = "none";
     }
   });
 
-  // Mostra ou esconde a section de erro
-  const erro = document.getElementById("error");
-  if (encontrou) {
-    erro.style.display = "none";
+  // Mostra ou esconde a mensagem de erro
+  if (!encontrou) {
+    errorSection.style.display = "block";
+    cardsContainer.style.display = "none";
   } else {
-    erro.style.display = "block";
+    errorSection.style.display = "none";
+    cardsContainer.style.display = "flex"; // ou block, conforme seu CSS
   }
 }

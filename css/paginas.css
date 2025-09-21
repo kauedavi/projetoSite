@@ -1,0 +1,110 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* IMAGENS */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* HEADER */
+header {
+  background-color: #0056b3;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* BOTÕES */
+button,
+.btn {
+  font-family: inherit;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #0071e3;
+}
+
+/* MAIN */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* SECTIONS */
+section {
+  background-color: #fff;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+  font-size: 1.6rem;
+  color: #042c5c;
+  margin-bottom: 1rem;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  color: #0056b3;
+  margin-top: 1rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: #042c5c;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
