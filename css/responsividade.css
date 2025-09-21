@@ -68,11 +68,16 @@
     .item {
        aspect-ratio: 4 / 3;  /* em celulares, um pouco mais quadrado */
     }
+    .overlay {
+        max-height: 60%;
+        padding: 10px 15px;
+    }
     .overlay h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        margin-bottom: 6px;
     }
     .overlay p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     .arrow-left, .arrow-right {
         width: 35px;
