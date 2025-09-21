@@ -230,7 +230,9 @@ section h3 {
 .areaPesquisa {
     width: 100%;
     padding: 10px;
-    background-color: #06478b;
+    background-color: #0332a0
+
+;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -316,30 +318,22 @@ section h3 {
 /* Cada slide */
 .item {
     position: relative;
-    min-width: 100% !important;
-    max-width: 100% !important;
-    height: 490px;
+    min-width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9; /* mantém proporção 16:9 */
     flex-shrink: 0;
     opacity: 0.4;
     transition: opacity 0.5s ease, transform 0.5s ease;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 .item img {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    /* garante que a imagem sempre preencha */
-    object-position: center center;
-    /* centraliza */
-    transform: none !important;
-    /* remove zoom para evitar cortes */
-    transition: transform 0.6s ease;
+    object-position: center;
     display: block;
-    margin: 0 auto;
 }
 
 
