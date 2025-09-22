@@ -443,6 +443,25 @@ section h3 {
     background: linear-gradient(to left, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
 }
 
+.slide-container {
+    max-width: 1200px;
+    /* ou o valor desejado para desktop */
+    margin: 0 auto;
+    /* centraliza horizontalmente */
+    padding: 0 20px;
+    /* espaçamento lateral no desktop */
+    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
+}
+
+/* No mobile, remove margens e padding para ocupar 100% */
+@media (max-width: 768px) {
+    .slide-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 /* =========================
    FOOTER
 ========================= */
@@ -523,24 +542,7 @@ footer {
     }
 }
 
-.slide-container {
-    max-width: 1200px;
-    /* ou o valor desejado para desktop */
-    margin: 0 auto;
-    /* centraliza horizontalmente */
-    padding: 0 20px;
-    /* espaçamento lateral no desktop */
-    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
-}
 
-/* No mobile, remove margens e padding para ocupar 100% */
-@media (max-width: 768px) {
-    .slide-container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-}
 
 .item picture, 
 .item picture img {
