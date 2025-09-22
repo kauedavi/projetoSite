@@ -30,7 +30,8 @@ img {
 
 /* HEADER */
 header {
-  height: 200px;
+  min-height: 200px;
+  max-height: 320px;
   background: #0436AD;
   background: linear-gradient(140deg, rgba(4, 54, 173, 1) 0%, rgba(42, 123, 155, 1) 50%, rgba(3, 50, 167, 1) 100%);
   color: white;
