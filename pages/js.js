@@ -7,7 +7,10 @@ function togglePesquisa() {
 }
 
 function filtrarTextos() {
-  const termo = document.getElementById("campoPesquisa").value.toLowerCase().trim();
+  const termo = document
+    .getElementById("campoPesquisa")
+    .value.toLowerCase()
+    .trim();
 
   const main = document.querySelector("main");
   const slideContainer = main.querySelector(".slide-container");
@@ -31,14 +34,14 @@ function filtrarTextos() {
       resetAutoSlide();
     }, 100);
 
-    cards.forEach(card => card.style.display = "block");
+    cards.forEach((card) => (card.style.display = "block"));
     return;
   }
 
   slideContainer.style.display = "none";
 
   let encontrou = false;
-  cards.forEach(card => {
+  cards.forEach((card) => {
     const titulo = card.querySelector(".card-title");
     const texto = titulo ? titulo.innerText.toLowerCase() : "";
 
@@ -153,14 +156,13 @@ function markMovement() {
   lastMovement = Date.now();
 }
 
-
 setInterval(() => {
   const now = Date.now();
   const tempoParado = now - lastMovement;
 
   if (tempoParado > intervalTime * 2 && !isTransitioning) {
     console.warn("⚠️ Slide parado, forçando avanço...");
-    
+
     // Avança com segurança, evitando clones
     currentItem++;
     if (currentItem >= items.length - 1) {
@@ -173,7 +175,6 @@ setInterval(() => {
     resetAutoSlide();
   }
 }, 5000);
-
 
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
@@ -190,22 +191,26 @@ let currentTranslate = 0;
 let prevTranslate = 0;
 const threshold = 50;
 
-const isTouchDevice = 'ontouchstart' in window;
+const isTouchDevice = "ontouchstart" in window;
 
-const startEvent = isTouchDevice ? 'touchstart' : 'mousedown';
-const moveEvent = isTouchDevice ? 'touchmove' : 'mousemove';
-const endEvent = isTouchDevice ? 'touchend' : 'mouseup';
+const startEvent = isTouchDevice ? "touchstart" : "mousedown";
+const moveEvent = isTouchDevice ? "touchmove" : "mousemove";
+const endEvent = isTouchDevice ? "touchend" : "mouseup";
 
 gallery.addEventListener(startEvent, touchStart, { passive: false });
 gallery.addEventListener(moveEvent, touchMove, { passive: false });
 gallery.addEventListener(endEvent, touchEnd);
 
 function getClientX(event) {
-  return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+  return event.type.includes("mouse")
+    ? event.clientX
+    : event.touches[0].clientX;
 }
 
 function getClientY(event) {
-  return event.type.includes('mouse') ? event.clientY : event.touches[0].clientY;
+  return event.type.includes("mouse")
+    ? event.clientY
+    : event.touches[0].clientY;
 }
 
 function touchStart(event) {
@@ -217,7 +222,7 @@ function touchStart(event) {
   currentTranslate = prevTranslate;
   isUserInteracting = true;
   clearInterval(autoSlide);
-  gallery.style.transition = 'none';
+  gallery.style.transition = "none";
   markMovement();
 }
 
@@ -239,7 +244,7 @@ function touchEnd() {
   isUserInteracting = false;
   gallery.style.transition = `transform ${transitionTime}s ease-in-out`;
 
-  const movedBy = currentTranslate - (currentItem * -100);
+  const movedBy = currentTranslate - currentItem * -100;
   if (movedBy < -threshold && currentItem < items.length - 1) {
     currentItem++;
   } else if (movedBy > threshold && currentItem > 1) {

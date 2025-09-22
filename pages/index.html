@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro de Memória</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="/css/responsividade.css">
+  <link rel="stylesheet" href="../styles/style.css">
   <link rel="shortcut icon" type="image/png"
     href="https://static.wixstatic.com/media/99d571_dd9cf5b6e819471ca78fced82f7583a2~mv2.png">
   <!-- Bootstrap CSS -->
@@ -28,7 +27,7 @@
     <div class="centro">
       <h1>Centro de Memória Virtual</h1>
       <div class="pesquisa-container">
-        <button class="btn-quadrado " onclick="togglePesquisa()"><img src="img/lupa.png" alt="" width="20px"
+        <button class="btn-quadrado " onclick="togglePesquisa()"><img src="../assets/img/lupa.png" alt="" width="20px"
             height="25px"></button>
         <input type="text" id="campoPesquisa" placeholder="Pesquisar..." onkeyup="filtrarTextos()">
       </div>
@@ -43,11 +42,13 @@
         <h4 class="text-gradient">Confira nossos principais projetos</h4>
         <div class="container">
           <div class="gallery-wrapper">
+            
             <div class="gallery">
+
               <div class="item" onclick="location.href='historia_sebrae.html'">
                 <picture>
-                  <source srcset="img/imgMob/sebraeMob.png" media="(max-width: 768px)">
-                  <img src="img/etec-sebrae.jpg" alt="Etec Sebrae" loading="lazy" />
+                  <source srcset="../assets/img/imgMob/sebraeMob.png" media="(max-width: 768px)">
+                  <img src="../assets/img/etec-sebrae.jpg" alt="Etec Sebrae" loading="lazy" />
                 </picture>
                 <div class="overlay">
                   <h2>Etec Sebrae</h2>
@@ -59,8 +60,8 @@
               <div class="item" onclick="location.href='pagina_centro_memoria.html'">
                 <!-- Adicionei um href exemplo; ajuste se necessário -->
                 <picture>
-                  <source srcset="img/imgMob/centroMob.png" media="(max-width: 768px)">
-                  <img src="img/CentroDeMemoria.jpeg" alt="Centro de Memória" loading="lazy" />
+                  <source srcset="../assets/img/imgMob/centroMob.png" media="(max-width: 768px)">
+                  <img src="../assets/img/CentroDeMemoria.jpeg" alt="Centro de Memória" loading="lazy" />
                 </picture>
                 <div class="overlay">
                   <h2>Centro de Memória</h2>
@@ -71,8 +72,8 @@
 
               <div class="item current-item" onclick="location.href='pagina_biblioteca.html'">
                 <picture>
-                  <source srcset="img/imgMob/bibliMob.png" media="(max-width: 768px)">
-                  <img src="img/bibliotecaSlide.jpg" alt="Biblioteca" loading="lazy" />
+                  <source srcset="../assets/img/imgMob/bibliMob.png" media="(max-width: 768px)">
+                  <img src="../assets/img/bibliotecaSlide.jpg" alt="Biblioteca" loading="lazy" />
                 </picture>
                 <div class="overlay">
                   <h2>Biblioteca Etec Sebrae</h2>
@@ -83,8 +84,8 @@
 
               <div class="item" onclick="location.href='pagina_uniformes.html'">
                 <picture>
-                  <source srcset="img/imgMob/uniformeMob.png" media="(max-width: 768px)">
-                  <img src="img/UniForme.png" alt="Uniforme" loading="lazy" />
+                  <source srcset="../assets/img/imgMob/uniformeMob.png" media="(max-width: 768px)">
+                  <img src="../assets/img/UniForme.png" alt="Uniforme" loading="lazy" />
                 </picture>
                 <div class="overlay">
                   <h2>Uniforme Etec Sebrae</h2>
@@ -110,7 +111,7 @@
 
       <div class="cardLink">
         <div class="card h-100" onclick="location.href='pagina_biblioteca.html'">
-          <img src="img/99d571_783c1bde898041a7a9844bf991a8e09b~mv2_d_3264_2448_s_4_2.avif" class="card-img-top"
+          <img src="../assets/img/99d571_783c1bde898041a7a9844bf991a8e09b~mv2_d_3264_2448_s_4_2.avif" class="card-img-top"
             alt="Biblioteca Etec Sebrae">
           <div class="card-body">
             <h5 class="card-title">Biblioteca da Etec Sebrae</h5>
@@ -122,7 +123,7 @@
 
       <div class="cardLink">
         <div class="card h-100" onclick="location.href='pagina_uniformes.html'">
-          <img src="img/UniCap.png" class="card-img-top" alt="Uniformes e Objetos">
+          <img src="../assets/img/UniCap.png" class="card-img-top" alt="Uniformes e Objetos">
           <div class="card-body">
             <h5 class="card-title">Uniformes e Objetos</h5>
             <p class="card-text">Conheça os materiais institucionais que marcaram gerações na Etec Sebrae. Ao longo da
@@ -134,7 +135,7 @@
 
       <div class="cardLink">
         <div class="card h-100" onclick="location.href='entrevista.html'">
-          <img src="img/entrevistaCapa.jpeg" class="card-img-top" alt="Projeto Mine">
+          <img src="../assets/img/entrevistaCapa.jpeg" class="card-img-top" alt="Projeto Mine">
           <div class="card-body">
             <h5 class="card-title">Entrevista</h5>
             <p class="card-text">Acompanhe entrevistas realizadas pelos alunos aos representantes da Etec Sebrae. Um
@@ -146,7 +147,7 @@
       <div class="cardLink">
         <div class="card h-100" onclick="location.href='coresSebrae.html'">
           <img
-            src="img/Baixar conceito de fundo de triângulo abstrato em combinação de cores vermelha e branca gratuitamente.jpeg"
+            src="../assets/img/Baixar conceito de fundo de triângulo abstrato em combinação de cores vermelha e branca gratuitamente.jpeg"
             class="card-img-top" alt="Projeto Mine">
           <div class="card-body">
             <h5 class="card-title">Cores</h5>
