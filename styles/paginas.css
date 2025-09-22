@@ -136,13 +136,17 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
- main section img {
-      max-width: 250px;
-      height: auto;
-      display: block;
-      margin: 0.5rem auto;
-      border-radius: 12px;
-    }
+main section img {
+  width: 100%;
+  max-width: 600px; /* Aumentado para tornar as imagens maiores */
+  aspect-ratio: 16 / 9; /* Padroniza para proporção 16:9 */
+  height: auto;
+  display: block;
+  margin: 0.5rem auto;
+  border-radius: 12px;
+  object-fit: cover; /* Garante que a imagem se ajuste à proporção sem distorção, cortando se necessário */
+  object-position: center; /* Centraliza o corte da imagem */
+}
 
 section h2 {
   font-size: 1.6rem;
@@ -182,6 +186,20 @@ footer {
   main {
     padding: 1rem 0.5rem;
     /* Ou padding: 0; para zero total */
+  }
+
+  /* Ajuste responsivo para imagens em seções: mantém 16:9, mas reduz max-width em telas menores */
+  main section img {
+    max-width: 400px; /* Menor em mobile para caber melhor */
+    aspect-ratio: 16 / 9; /* Mantém a proporção */
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ajuste adicional para telas muito pequenas: permite uma proporção ligeiramente mais quadrada se necessário, mas prioriza 16:9 */
+  main section img {
+    max-width: 100%; /* Usa largura total em telas muito pequenas */
+    aspect-ratio: 16 / 9; /* Mantém 16:9 como padrão */
   }
 }
 
@@ -253,7 +271,7 @@ footer {
         font-size: 1.3rem;
     }
     .item {
-       aspect-ratio: 4 / 3;  /* em celulares, um pouco mais quadrado */
+       aspect-ratio: 16 / 9;  /* Mantém 16:9 em celulares para padronização (ajustado do original 4/3 para alinhar com o pedido) */
     }
     .overlay {
         max-height: 60%;
