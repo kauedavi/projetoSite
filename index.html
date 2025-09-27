@@ -36,75 +36,97 @@
 
   <main>
 
-    <!-- CARROSSEL -->
-    <div class="slide-container">
-      <div class="slideDef">
-        <h4 class="text-gradient">Confira nossos principais projetos</h4>
-        <div class="container">
-          <div class="gallery-wrapper">
-            
-            <div class="gallery">
+   <div class="slide-container">
+  <div class="slideDef">
+    <h4 class="text-gradient">Confira nossos principais projetos</h4>
+    <div id="projetosCarousel" class="carousel slide" data-bs-ride="carousel"
+      data-bs-interval="4000" data-bs-pause="hover" data-bs-wrap="true">
+      
+      <!-- Indicadores adicionados aqui -->
+      <ol class="carousel-indicators">
+        <li data-bs-target="#projetosCarousel" data-bs-slide-to="0" class=""></li>
+        <li data-bs-target="#projetosCarousel" data-bs-slide-to="1" class=""></li>
+        <li data-bs-target="#projetosCarousel" data-bs-slide-to="2" class="active" aria-current="true" aria-label="Slide 3"></li>
+        <li data-bs-target="#projetosCarousel" data-bs-slide-to="3" class=""></li>
+      </ol>
 
-              <div class="item" onclick="location.href='pages/historia_sebrae.html'">
-                <picture>
-                  <source srcset="assets/img/imgMob/sebraeMob.png" media="(max-width: 768px)">
-                  <img src="https://i.ytimg.com/vi/jgGYSbg2q8Y/maxresdefault.jpg" alt="Etec Sebrae" loading="lazy" />
-                </picture>
-                <div class="overlay">
-                  <h2>Etec Sebrae</h2>
-                  <p>Descubra como nasceu a Etec Sebrae, sua missão transformadora e os valores que moldam futuros
-                    líderes e inovadores.</p>
-                </div>
-              </div>
-
-              <div class="item" onclick="location.href='pages/pagina_centro_memoria.html'">
-                <picture>
-                  <source srcset="assets/img/imgMob/centroMob.png" media="(max-width: 768px)">
-                  <img src="assets/img/CentroDeMemoria.jpeg" alt="Centro de Memória da Etec Sebrae" loading="lazy" />
-                </picture>
-                <div class="overlay">
-                  <h2>Centro de Memória</h2>
-                  <p>Explore os registros, conquistas e lembranças que eternizam a trajetória da Etec Sebrae em um só
-                    lugar.</p>
-                </div>
-              </div>
-
-              <div class="item current-item" onclick="location.href='pages/pagina_biblioteca.html'">
-                <picture>
-                  <source srcset="assets/img/imgMob/bibliMob.png" media="(max-width: 768px)">
-                  <img src="assets/img/bibliotecaSlide.jpg" alt="Biblioteca da Etec Sebrae" loading="lazy" />
-                </picture>
-                <div class="overlay">
-                  <h2>Biblioteca Etec Sebrae</h2>
-                  <p>Mergulhe na história da biblioteca, onde traz conhecimentos especializados em negócios e
-                    empreendedorismo.</p>
-                </div>
-              </div>
-
-              <div class="item" onclick="location.href='pages/entrevista.html'">
-                <picture>
-                  <source srcset="assets/img/imgMob/EntMob.png" media="(max-width: 768px)">
-                  <img src="assets/img/diretoraEnt.jpeg" alt="Entrevista dos diretores da Etec Sebrae, FATEC e Sebrae" loading="lazy" />
-                </picture>
-                <div class="overlay">
-                  <h2>Entrevistas</h2>
-                  <p>Acompanhe as entrevistas conduzidas pelos estudantes com os diretores da ETEC, FATEC e Sebrae, destacando iniciativas e perspectivas educacionais.</p>
-                </div>
-              </div>
-            </div>
+      <div class="carousel-inner">
+        <div class="carousel-item" onclick="location.href='pages/historia_sebrae.html'">
+          <div class="carousel-item-image">
+            <picture>
+              <source srcset="assets/img/imgMob/sebraeMob.png" media="(max-width: 768px)">
+              <img src="https://i.ytimg.com/vi/jgGYSbg2q8Y/maxresdefault.jpg" alt="Etec Sebrae" loading="lazy" />
+            </picture>
           </div>
+          <div class="carousel-caption-custom">
+            <h2>Etec Sebrae</h2>
+            <p>Descubra como nasceu a Etec Sebrae, sua missão transformadora e os valores que moldam futuros líderes
+              e inovadores.</p>
+          </div>
+        </div>
 
-          <button class="arrow-left control">&#10094;</button>
-          <button class="arrow-right control">&#10095;</button>
+        <div class="carousel-item" onclick="location.href='pages/pagina_centro_memoria.html'">
+          <div class="carousel-item-image">
+            <picture>
+              <source srcset="assets/img/imgMob/centroMob.png" media="(max-width: 768px)">
+              <img src="assets/img/CentroDeMemoria.jpeg" alt="Centro de Memória da Etec Sebrae" loading="lazy" />
+            </picture>
+          </div>
+          <div class="carousel-caption-custom">
+            <h2>Centro de Memória</h2>
+            <p>Explore os registros, conquistas e lembranças que eternizam a trajetória da Etec Sebrae em um só
+              lugar.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item active" onclick="location.href='pages/pagina_biblioteca.html'">
+          <div class="carousel-item-image">
+            <picture>
+              <source srcset="assets/img/imgMob/bibliMob.png" media="(max-width: 768px)">
+              <img src="assets/img/bibliotecaSlide.jpg" alt="Biblioteca da Etec Sebrae" loading="lazy" />
+            </picture>
+          </div>
+          <div class="carousel-caption-custom">
+            <h2>Biblioteca Etec Sebrae</h2>
+            <p>Mergulhe na história da biblioteca, onde traz conhecimentos especializados em negócios e
+              empreendedorismo.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item" onclick="location.href='pages/entrevista.html'">
+          <div class="carousel-item-image">
+            <picture>
+              <source srcset="assets/img/imgMob/EntMob.png" media="(max-width: 768px)">
+              <img src="assets/img/diretoraEnt.jpeg" alt="Entrevista dos diretores da Etec Sebrae, FATEC e Sebrae"
+                loading="lazy" />
+            </picture>
+          </div>
+          <div class="carousel-caption-custom">
+            <h2>Entrevistas</h2>
+            <p>Acompanhe as entrevistas conduzidas pelos estudantes com os diretores da ETEC, FATEC e Sebrae,
+              destacando iniciativas e perspectivas educacionais.</p>
+          </div>
         </div>
       </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#projetosCarousel" data-bs-slide="prev">
+        <span class="control-icon" aria-hidden="true">&#10094;</span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projetosCarousel" data-bs-slide="next">
+        <span class="control-icon" aria-hidden="true">&#10095;</span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
     </div>
+  </div>
+</div>
 
 
+    <!--linha que separa o carrossel das pesquisas-->
     <div class="areaPesquisa">
       <p class="textGif">Pesquisas:</p>
     </div>
-
+    
     <!-- Cards -->
     <div class="cards">
 
@@ -134,7 +156,8 @@
 
       <div class="cardLink">
         <div class="card h-100" onclick="location.href='pages/entrevista.html'">
-          <img src="assets/img/diretoraEnt.jpeg" class="card-img-top" alt="Entrevista dos alunos aos diretores da ETEC FATEC e SEBRAE">
+          <img src="assets/img/diretoraEnt.jpeg" class="card-img-top"
+            alt="Entrevista dos alunos aos diretores da ETEC FATEC e SEBRAE">
           <div class="card-body">
             <h5 class="card-title">Entrevista</h5>
             <p class="card-text">Acompanhe entrevistas realizadas pelos alunos aos representantes da Etec Sebrae. Um
@@ -183,6 +206,7 @@
 
     </div>
 
+    <!--Section de erro ao pesquisar-->
     <section id="error">
       <h2>Nenhum resultado encontrado</h2>
       <p>Tente outro termo na pesquisa.</p>
@@ -195,7 +219,9 @@
     <p class="desc">Esse Projeto foi realizado com o auxílio do assistente técnico Arthur Jacinto de Oliveira Santos</p>
   </footer>
   <script src="pages/js.js"></script>
-  <script src="pages/slide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

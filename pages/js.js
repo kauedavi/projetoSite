@@ -63,194 +63,35 @@ function filtrarTextos() {
 }
 
 // Carrossel
-const gallery = document.querySelector(".gallery");
-const prevBtn = document.querySelector(".arrow-left");
-const nextBtn = document.querySelector(".arrow-right");
 
-let items = Array.from(document.querySelectorAll(".item"));
-let currentItem = 1;
-let isTransitioning = false;
-const intervalTime = 4000;
-const transitionTime = 0.6;
-
-// Clones
-const firstClone = items[0].cloneNode(true);
-const lastClone = items[items.length - 1].cloneNode(true);
-firstClone.id = "first-clone";
-lastClone.id = "last-clone";
-
-gallery.appendChild(firstClone);
-gallery.insertBefore(lastClone, items[0]);
-
-items = Array.from(document.querySelectorAll(".item"));
-updateSlidePosition();
-
-function updateSlidePosition() {
-  gallery.style.transform = `translateX(-${currentItem * 100}%)`;
-  items.forEach((item, index) => {
-    item.classList.toggle("current-item", index === currentItem);
-  });
-}
-
-function updateCarousel() {
-  if (isTransitioning) return;
-  isTransitioning = true;
-
-  gallery.style.transition = `transform ${transitionTime}s ease-in-out`;
-  updateSlidePosition();
-  markMovement();
-}
-
-gallery.addEventListener("transitionend", () => {
-  const item = items[currentItem];
-  gallery.style.transition = "none";
-
-  if (item.id === "first-clone") currentItem = 1;
-  else if (item.id === "last-clone") currentItem = items.length - 2;
-
-  updateSlidePosition();
-  isTransitioning = false;
-});
-
-nextBtn.addEventListener("click", () => {
-  if (isTransitioning) return;
-  currentItem++;
-  updateCarousel();
-  resetAutoSlide();
-});
-
-prevBtn.addEventListener("click", () => {
-  if (isTransitioning) return;
-  currentItem--;
-  updateCarousel();
-  resetAutoSlide();
-});
-
-let autoSlide;
-let isUserInteracting = false;
-
-function startAutoSlide() {
-  autoSlide = setInterval(() => {
-    if (!isUserInteracting) {
-      currentItem++;
-      updateCarousel();
-    }
-  }, intervalTime);
-}
-
-function resetAutoSlide() {
-  clearInterval(autoSlide);
-  startAutoSlide();
-}
-
-startAutoSlide();
-
-window.addEventListener("resize", () => {
-  gallery.style.transition = "none";
-  updateSlidePosition();
-});
-
-let lastMovement = Date.now();
-
-function markMovement() {
-  lastMovement = Date.now();
-}
-
-setInterval(() => {
-  const now = Date.now();
-  const tempoParado = now - lastMovement;
-
-  if (tempoParado > intervalTime * 2 && !isTransitioning) {
-    console.warn("⚠️ Slide parado, forçando avanço...");
-
-    // Avança com segurança, evitando clones
-    currentItem++;
-    if (currentItem >= items.length - 1) {
-      currentItem = 1; // volta ao primeiro item real
-      gallery.style.transition = "none";
-      updateSlidePosition();
-    }
-
-    updateCarousel();
-    resetAutoSlide();
-  }
-}, 5000);
-
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    console.log("✅ Usuário voltou");
-    resetAutoSlide();
-    updateCarousel();
+document.addEventListener("DOMContentLoaded", function () {
+  const carouselEl = document.getElementById("projetosCarousel");
+  if (carouselEl) {
+    // Pause no hidden, resume no visible (como no original)
+    document.addEventListener("visibilitychange", function () {
+      const carousel = bootstrap.Carousel.getInstance(carouselEl);
+      if (document.hidden && carousel) {
+        carousel.pause();
+      } else if (!document.hidden && carousel) {
+        carousel.cycle(); // Resumir o ciclo
+      }
+    });
+    // NÃO inclua o resize handler — Bootstrap gerencia sozinho e evita o erro "illegal invocation"
+    // Se precisar forçar algo em resize, use um debounce simples sem dispose()
   }
 });
 
-// Swipe / Scroll Mobile
-let startX = 0;
-let startY = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-const threshold = 50;
+//animação das sections
+  document.addEventListener("DOMContentLoaded", () => {
+        const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
 
-const isTouchDevice = "ontouchstart" in window;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        }, { threshold: 0.2 });
 
-const startEvent = isTouchDevice ? "touchstart" : "mousedown";
-const moveEvent = isTouchDevice ? "touchmove" : "mousemove";
-const endEvent = isTouchDevice ? "touchend" : "mouseup";
-
-gallery.addEventListener(startEvent, touchStart, { passive: false });
-gallery.addEventListener(moveEvent, touchMove, { passive: false });
-gallery.addEventListener(endEvent, touchEnd);
-
-function getClientX(event) {
-  return event.type.includes("mouse")
-    ? event.clientX
-    : event.touches[0].clientX;
-}
-
-function getClientY(event) {
-  return event.type.includes("mouse")
-    ? event.clientY
-    : event.touches[0].clientY;
-}
-
-function touchStart(event) {
-  if (isTransitioning) return;
-
-  startX = getClientX(event);
-  startY = getClientY(event);
-  prevTranslate = currentItem * -100;
-  currentTranslate = prevTranslate;
-  isUserInteracting = true;
-  clearInterval(autoSlide);
-  gallery.style.transition = "none";
-  markMovement();
-}
-
-function touchMove(event) {
-  if (!isUserInteracting) return;
-
-  const deltaX = getClientX(event) - startX;
-  const deltaY = getClientY(event) - startY;
-
-  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
-    event.preventDefault();
-  }
-
-  currentTranslate = prevTranslate + (deltaX / gallery.offsetWidth) * 100;
-  gallery.style.transform = `translateX(${currentTranslate}%)`;
-}
-
-function touchEnd() {
-  isUserInteracting = false;
-  gallery.style.transition = `transform ${transitionTime}s ease-in-out`;
-
-  const movedBy = currentTranslate - currentItem * -100;
-  if (movedBy < -threshold && currentItem < items.length - 1) {
-    currentItem++;
-  } else if (movedBy > threshold && currentItem > 1) {
-    currentItem--;
-  }
-
-  updateCarousel();
-  setTimeout(resetAutoSlide, 1000);
-}
+        reveals.forEach(el => observer.observe(el));
+      });

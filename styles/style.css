@@ -114,62 +114,73 @@ button.btn-quadrado {
 
 /*PESQUISA*/
 .pesquisa-container {
-  display: flex;
-  flex-direction: column; /* botão em cima, input embaixo */
-  align-items: center;    /* centraliza os dois */
-  gap: 0.5rem;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    /* botão em cima, input embaixo */
+    align-items: center;
+    /* centraliza os dois */
+    gap: 0.5rem;
+    margin-top: 40px;
 }
 
 .pesquisa-container button {
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: white;
-  transition: transform 0.2s ease, color 0.3s ease;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 
 .pesquisa-container button:hover {
-  transform: scale(1.1);
-  color: #00bfff;
+    transform: scale(1.1);
+    color: #00bfff;
 }
 
 .pesquisa-container input {
-  max-width: 0;
-  opacity: 0;
-  padding: 0;
-  border: none;
-  border-bottom: 2px solid transparent;
-  background: transparent;
-  color: white;
-  transition: all 0.4s ease;
-  pointer-events: none; /* desativa enquanto oculto */
-outline: none; /* remove a borda padrão ao focar */
- min-width: 20%; /* largura quando aberto */
-  max-width: 40%; /* ocupa 80% da largura da tela */
+    max-width: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: white;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    /* desativa enquanto oculto */
+    outline: none;
+    /* remove a borda padrão ao focar */
+    min-width: 20%;
+    /* largura quando aberto */
+    max-width: 40%;
+    /* ocupa 80% da largura da tela */
 }
 
 .pesquisa-container input.ativo {
-  min-width: 30%; /* largura quando aberto */
-  max-width: 80%; /* ocupa 80% da largura da tela */
-  opacity: 1;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-bottom: 2px solid white;
-  pointer-events: auto; /* ativa quando visível */
- outline: none; /* remove a borda padrão ao focar */
+    min-width: 30%;
+    /* largura quando aberto */
+    max-width: 80%;
+    /* ocupa 80% da largura da tela */
+    opacity: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-bottom: 2px solid white;
+    pointer-events: auto;
+    /* ativa quando visível */
+    outline: none;
+    /* remove a borda padrão ao focar */
 }
 
 .pesquisa-container input::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  opacity: 1;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
 }
+
 /*MAIN E SECTIONS*/
 main {
     animation: fadeIn 0.8s ease-in-out;
     padding-bottom: 10px;
-     background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
+    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
 }
 
 section {
@@ -259,19 +270,20 @@ section h3 {
     /* Centraliza os cards na linha */
     padding: 20px;
     background-color: #ffffff;
-      
+
 }
+
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
-  transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 
@@ -289,11 +301,11 @@ section h3 {
     }
 }
 
-/*CARROSSEL*/
-/* ========================
-   CARROSSEL - VERSÃO FINAL
-======================== */
 
+
+/* Carrossel Bootstrap customizado */
+/* Carrossel Bootstrap customizado */
+/* Carrossel Bootstrap customizado */
 .slideDef {
     width: 100%;
     padding: 40px 20px;
@@ -310,104 +322,97 @@ section h3 {
     margin-bottom: 25px;
 }
 
-/* Container do carrossel */
-.container {
+/* Carrossel Bootstrap customizado */
+.carousel-custom {
     position: relative;
     padding: 0 !important;
     overflow: hidden;
     border-radius: 12px;
     width: 100% !important;
     max-width: 100% !important;
+    margin: 0 auto;
 }
 
-/* Faixa que segura os slides */
-.gallery {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
+.carousel-inner {
     width: 100% !important;
     max-width: 100% !important;
-    flex-wrap: nowrap;
-    touch-action: pan-y; /* Permite scroll vertical da página, mas prioriza horizontal no carrossel */
-    user-select: none; /* Evita seleção de texto durante arrasto */
-    -webkit-user-select: none; /* Para Safari/iOS */
+    /* Transição para o deslize horizontal (Bootstrap aplica translateX aqui) */
+    transition: transform 0.6s ease-in-out !important;
+    border-radius: 12px;
 }
-.gallery-wrapper {
+
+/* Cada item do carrossel */
+.carousel-item {
+    position: relative;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
     overflow: hidden;
-    width: 100% !important;
-    max-width: 100% !important;
-    touch-action: pan-y; /* Mesma regra para o wrapper */
-}
-/* Para mobile: esconde setas se quiser (opcional, com media query) */
-@media (max-width: 768px) {
-    .arrow-left,
-    .arrow-right {
-        display: none; /* Opcional: esconde setas em mobile, já que swipe é prioritário */
-    }
-    
-    .item {
-        min-width: 100% !important; /* Garante full-width em mobile */
-    }
-}
-/* Cada slide */
-.item {
-  position: relative;
-  min-width: 100% !important;
-  max-width: 100% !important;
-  aspect-ratio: 16 / 9;   /* Mantém proporção responsiva */
-  flex-shrink: 0;
-  opacity: 0.4;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  overflow: hidden;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    transition: none;
 }
 
-.item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* Garante que a imagem preenche sem deformar */
-  object-position: center;
-}
-
-/* Slide ativo */
-.current-item {
-    opacity: 1;
-    transform: scale(1.01);
+.carousel-item.active {
+    opacity: 1 !important;
     z-index: 1;
 }
 
-/* Texto dentro do slide */
-.overlay {
+.carousel-item:not(.active) {
+    pointer-events: none;
+}
+
+.carousel-item-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item-image picture,
+.carousel-item-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.carousel-caption-custom {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px;
+    padding: 20px 20px 40px 20px; /* Aumentado padding-bottom para dar espaço aos indicadores */
     color: #fff;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
     border-radius: 0 0 12px 12px;
+    margin: 0;
+    z-index: 2; /* Garante que fique acima dos indicadores */
 }
 
-.overlay h2 {
+.carousel-caption-custom h2 {
     margin: 0;
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.2;
 }
 
-.overlay p {
+.carousel-caption-custom p {
     margin: 8px 0 0;
     font-size: 1rem;
     opacity: 0.9;
     line-height: 1.4;
 }
 
-/* Botões de navegação */
-.arrow-left,
-.arrow-right {
+.carousel-control-prev,
+.carousel-control-next {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 60px;
+    margin-top: 5px; /*calibragem do botão*/
     font-size: 32px;
     color: #fff;
     border: none;
@@ -419,48 +424,167 @@ section h3 {
     justify-content: center;
     opacity: 0.25;
     padding: 0;
+    text-shadow: none;
+    border-radius: 12px;
+}
+
+.carousel-control-prev {
+    left: 0;
+    background: linear-gradient(to right, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
     border-radius: 0 8px 8px 0;
 }
 
-.arrow-left {
-    left: 0;
-    background: linear-gradient(to left, transparent 0%, rgba(0, 123, 255, 0.8) 100%);
-}
-
-.arrow-right {
+.carousel-control-next {
     right: 0;
-    background: linear-gradient(to right, transparent 0%, rgba(0, 123, 255, 0.8) 100%);
+    background: linear-gradient(to left, transparent 0%, rgba(0, 123, 255, 0.8) 100%);
     border-radius: 8px 0 0 8px;
 }
 
-.arrow-left:hover {
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
     opacity: 1;
+    color: #fff;
+    text-decoration: none;
+    background: inherit;
+    /* Mantém o gradiente */
+    border-radius: 12px;
+}
+
+.carousel-control-prev:hover {
     background: linear-gradient(to right, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
 }
 
-.arrow-right:hover {
-    opacity: 1;
+.carousel-control-next:hover {
     background: linear-gradient(to left, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
+}
+
+/* Ícone customizado (substitui o SVG padrão do Bootstrap) */
+.control-icon {
+    font-size: 32px;
+    color: #fff;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    display: block;
+    line-height: 1;
+}
+
+/* Sobrescreve o ícone padrão do Bootstrap */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none !important;
+    /* Esconde o ícone SVG padrão */
+}
+
+/* Estilos para os Indicadores (ajustados para o fundo) */
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0; /* No fundo absoluto */
+    left: 0;
+    z-index: 1; /* Abaixo do caption, mas acima do slide */
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 10px; /* Respiro do edge inferior */
+    margin-right: 0; /* Removido para centralizar melhor */
+    margin-left: 0;
+    gap: 8px; /* Espaçamento entre indicadores */
+    list-style: none;
+}
+
+.carousel-indicators li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 12px; /* Tamanho padrão */
+    height: 12px;
+    padding: 0;
+    margin: 0; /* Remove todas as margens para controle preciso */
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5); /* Cor semi-transparente */
+    border: 0;
+
+    transition: opacity 0.6s ease, background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #0071e3; /* Cor ativa (azul do seu tema) */
+    width: 14px;
+    height: 14px;
+}
+
+.carousel-indicators li:hover {
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .slide-container {
     max-width: 1200px;
-    /* ou o valor desejado para desktop */
     margin: 0 auto;
-    /* centraliza horizontalmente */
     padding: 0 20px;
-    /* espaçamento lateral no desktop */
     background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
 }
 
-/* No mobile, remove margens e padding para ocupar 100% */
+/* Mobile: esconde setas e otimiza indicadores */
 @media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none !important; /* Já configurado: esconde setas */
+    }
+
+    .carousel-item {
+        min-width: 100% !important;
+    }
+
     .slide-container {
         max-width: 100%;
         margin: 0;
         padding: 0;
     }
+
+    .slideDef {
+        padding: 20px 10px;
+    }
+
+    /* Indicadores no mobile: maiores para touch e no fundo */
+    .carousel-indicators {
+        bottom: 0; /* No fundo absoluto */
+        margin-bottom: 5px; /* Menor respiro em mobile */
+        gap: 10px; /* Mais espaço entre eles */
+    }
+
+    .carousel-indicators li {
+        width: 14px; /* Maior para mobile */
+        height: 14px;
+        margin: 0;
+    }
+
+    .carousel-indicators .active {
+        width: 16px;
+        height: 16px;
+    }
+
+    .carousel-caption-custom {
+        display: block !important;
+        padding: 15px 15px 30px 15px; /* Padding-bottom aumentado para mobile */
+    }
+
+    .carousel-caption-custom h2 {
+        font-size: 1.4rem; /* Ajusta tamanho no mobile */
+    }
+
+    .carousel-caption-custom p {
+        font-size: 0.9rem;
+    }
 }
+
+/* Garante que o caption seja sempre visível */
+.carousel-caption-custom {
+    display: block !important;
+}
+
+
 
 /* =========================
    FOOTER
@@ -544,16 +668,16 @@ footer {
 
 
 
-.item picture, 
+.item picture,
 .item picture img {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 0;
-  margin: 0;
-  padding: 0;
-  transform: none !important;
-  transition: transform 0.6s ease;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    transform: none !important;
+    transition: transform 0.6s ease;
 }
