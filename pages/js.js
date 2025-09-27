@@ -95,3 +95,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         reveals.forEach(el => observer.observe(el));
       });
+
+      //acompanhar usuario header
+
+      window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY;
+    if (scrollPos > 100) { // Ativa após 100px de scroll
+      document.querySelector('.esquerda').style.opacity = '1';
+      document.querySelector('.direita').style.opacity = '1';
+    }
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal-bottom");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  reveals.forEach(el => observer.observe(el));
+});

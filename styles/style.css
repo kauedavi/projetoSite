@@ -1,3 +1,6 @@
+/* =========================
+   RESET & BASE
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +26,10 @@ img {
     display: block;
 }
 
-/*HEADER*/
+
+/* =========================
+   HEADER
+========================= */
 header {
     height: 150px;
     min-height: 450px;
@@ -71,7 +77,10 @@ header a.btn.btn-primary:hover {
     background-color: #0071e3;
 }
 
-/*BOTÕES*/
+
+/* =========================
+   BOTÕES
+========================= */
 button {
     font-family: inherit;
     margin: 5px;
@@ -112,13 +121,14 @@ button.btn-quadrado {
     transform: translateY(-2px) scale(1.02);
 }
 
-/*PESQUISA*/
+
+/* =========================
+   PESQUISA
+========================= */
 .pesquisa-container {
     display: flex;
-    flex-direction: column;
-    /* botão em cima, input embaixo */
-    align-items: center;
-    /* centraliza os dois */
+    flex-direction: column; /* botão em cima, input embaixo */
+    align-items: center; /* centraliza os dois */
     gap: 0.5rem;
     margin-top: 40px;
 }
@@ -146,29 +156,21 @@ button.btn-quadrado {
     background: transparent;
     color: white;
     transition: all 0.4s ease;
-    pointer-events: none;
-    /* desativa enquanto oculto */
-    outline: none;
-    /* remove a borda padrão ao focar */
+    pointer-events: none; /* desativa enquanto oculto */
+    outline: none; /* remove a borda padrão */
     min-width: 20%;
-    /* largura quando aberto */
     max-width: 40%;
-    /* ocupa 80% da largura da tela */
 }
 
 .pesquisa-container input.ativo {
     min-width: 30%;
-    /* largura quando aberto */
     max-width: 80%;
-    /* ocupa 80% da largura da tela */
     opacity: 1;
     margin-left: 20px;
     margin-right: 20px;
     border-bottom: 2px solid white;
     pointer-events: auto;
-    /* ativa quando visível */
     outline: none;
-    /* remove a borda padrão ao focar */
 }
 
 .pesquisa-container input::placeholder {
@@ -176,7 +178,10 @@ button.btn-quadrado {
     opacity: 1;
 }
 
-/*MAIN E SECTIONS*/
+
+/* =========================
+   MAIN & SECTIONS
+========================= */
 main {
     animation: fadeIn 0.8s ease-in-out;
     padding-bottom: 10px;
@@ -219,7 +224,10 @@ section h3 {
     animation: gradientMove 4s ease infinite;
 }
 
-/*IMAGENS*/
+
+/* =========================
+   IMAGENS & CARDS
+========================= */
 #img {
     display: flex;
     flex-wrap: wrap;
@@ -249,7 +257,7 @@ section h3 {
 .areaPesquisa {
     width: 100%;
     padding: 10px;
-    background-color: #06478b;
+    background: linear-gradient(140deg, rgb(12, 48, 133) 0%, #0f42b9 50%, rgb(11, 60, 185) 100%);
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -265,12 +273,9 @@ section h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /* Espaço entre os cards */
     justify-content: center;
-    /* Centraliza os cards na linha */
     padding: 20px;
     background-color: #ffffff;
-
 }
 
 .card {
@@ -286,10 +291,8 @@ section h3 {
     transition: transform 0.4s ease;
 }
 
-
 .cardLink {
     flex: 1 1 calc(33% - 20px);
-    /* Ocupa 50% menos o gap */
     max-width: calc(33% - 20px);
     box-sizing: border-box;
 }
@@ -301,11 +304,28 @@ section h3 {
     }
 }
 
+.cards .cardLink {
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
 
+.cards .cardLink.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* Carrossel Bootstrap customizado */
-/* Carrossel Bootstrap customizado */
-/* Carrossel Bootstrap customizado */
+/* Delay individual usando nth-child */
+.cards .cardLink:nth-child(1) { transition-delay: 0.1s; }
+.cards .cardLink:nth-child(2) { transition-delay: 0.2s; }
+.cards .cardLink:nth-child(3) { transition-delay: 0.3s; }
+.cards .cardLink:nth-child(4) { transition-delay: 0.4s; }
+.cards .cardLink:nth-child(5) { transition-delay: 0.5s; }
+.cards .cardLink:nth-child(6) { transition-delay: 0.6s; }
+
+/* =========================
+   CARROSSEL (Bootstrap Custom)
+========================= */
 .slideDef {
     width: 100%;
     padding: 40px 20px;
@@ -322,7 +342,15 @@ section h3 {
     margin-bottom: 25px;
 }
 
-/* Carrossel Bootstrap customizado */
+/* Container */
+.slide-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
+}
+
+/* Estrutura principal */
 .carousel-custom {
     position: relative;
     padding: 0 !important;
@@ -336,12 +364,10 @@ section h3 {
 .carousel-inner {
     width: 100% !important;
     max-width: 100% !important;
-    /* Transição para o deslize horizontal (Bootstrap aplica translateX aqui) */
     transition: transform 0.6s ease-in-out !important;
     border-radius: 12px;
 }
 
-/* Cada item do carrossel */
 .carousel-item {
     position: relative;
     min-width: 100% !important;
@@ -379,17 +405,19 @@ section h3 {
     object-position: center;
 }
 
+/* Caption */
 .carousel-caption-custom {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 20px 20px 40px 20px; /* Aumentado padding-bottom para dar espaço aos indicadores */
+    padding: 20px 20px 40px 20px;
     color: #fff;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
     border-radius: 0 0 12px 12px;
     margin: 0;
-    z-index: 2; /* Garante que fique acima dos indicadores */
+    z-index: 2;
+    display: block !important; /* Garante sempre visível */
 }
 
 .carousel-caption-custom h2 {
@@ -406,13 +434,14 @@ section h3 {
     line-height: 1.4;
 }
 
+/* Controles */
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 60px;
-    margin-top: 5px; /*calibragem do botão*/
+    margin-top: 5px;
     font-size: 32px;
     color: #fff;
     border: none;
@@ -446,7 +475,6 @@ section h3 {
     color: #fff;
     text-decoration: none;
     background: inherit;
-    /* Mantém o gradiente */
     border-radius: 12px;
 }
 
@@ -458,7 +486,6 @@ section h3 {
     background: linear-gradient(to left, rgba(0, 123, 255, 0.8) 0%, transparent 100%);
 }
 
-/* Ícone customizado (substitui o SVG padrão do Bootstrap) */
 .control-icon {
     font-size: 32px;
     color: #fff;
@@ -470,47 +497,39 @@ section h3 {
     line-height: 1;
 }
 
-/* Sobrescreve o ícone padrão do Bootstrap */
+/* Remove ícones padrão */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     display: none !important;
-    /* Esconde o ícone SVG padrão */
 }
 
-/* Estilos para os Indicadores (ajustados para o fundo) */
+/* Indicadores */
 .carousel-indicators {
     position: absolute;
     right: 0;
-    bottom: 0; /* No fundo absoluto */
+    bottom: 0;
     left: 0;
-    z-index: 1; /* Abaixo do caption, mas acima do slide */
+    z-index: 1;
     display: flex;
     justify-content: center;
     padding: 0;
-    margin-bottom: 10px; /* Respiro do edge inferior */
-    margin-right: 0; /* Removido para centralizar melhor */
-    margin-left: 0;
-    gap: 8px; /* Espaçamento entre indicadores */
+    margin-bottom: 10px;
+    gap: 8px;
     list-style: none;
 }
 
 .carousel-indicators li {
-    box-sizing: content-box;
-    flex: 0 1 auto;
-    width: 12px; /* Tamanho padrão */
+    width: 12px;
     height: 12px;
-    padding: 0;
-    margin: 0; /* Remove todas as margens para controle preciso */
-    text-indent: -999px;
+    margin: 0;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5); /* Cor semi-transparente */
+    background-color: rgba(255, 255, 255, 0.5);
     border: 0;
-
     transition: opacity 0.6s ease, background-color 0.3s ease;
 }
 
 .carousel-indicators .active {
-    background-color: #0071e3; /* Cor ativa (azul do seu tema) */
+    background-color: #0071e3;
     width: 14px;
     height: 14px;
 }
@@ -519,18 +538,11 @@ section h3 {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.slide-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    background: linear-gradient(135deg, #f7f9fc 0%, #eaf4ff 100%);
-}
-
-/* Mobile: esconde setas e otimiza indicadores */
+/* Responsividade do Carrossel */
 @media (max-width: 768px) {
     .carousel-control-prev,
     .carousel-control-next {
-        display: none !important; /* Já configurado: esconde setas */
+        display: none !important;
     }
 
     .carousel-item {
@@ -547,17 +559,15 @@ section h3 {
         padding: 20px 10px;
     }
 
-    /* Indicadores no mobile: maiores para touch e no fundo */
     .carousel-indicators {
-        bottom: 0; /* No fundo absoluto */
-        margin-bottom: 5px; /* Menor respiro em mobile */
-        gap: 10px; /* Mais espaço entre eles */
+        bottom: 0;
+        margin-bottom: 5px;
+        gap: 10px;
     }
 
     .carousel-indicators li {
-        width: 14px; /* Maior para mobile */
+        width: 14px;
         height: 14px;
-        margin: 0;
     }
 
     .carousel-indicators .active {
@@ -566,24 +576,17 @@ section h3 {
     }
 
     .carousel-caption-custom {
-        display: block !important;
-        padding: 15px 15px 30px 15px; /* Padding-bottom aumentado para mobile */
+        padding: 15px 15px 30px 15px;
     }
 
     .carousel-caption-custom h2 {
-        font-size: 1.4rem; /* Ajusta tamanho no mobile */
+        font-size: 1.4rem;
     }
 
     .carousel-caption-custom p {
         font-size: 0.9rem;
     }
 }
-
-/* Garante que o caption seja sempre visível */
-.carousel-caption-custom {
-    display: block !important;
-}
-
 
 
 /* =========================
@@ -597,6 +600,7 @@ footer {
     border-top: 4px solid #0056b3;
     font-size: 0.95rem;
 }
+
 
 /* =========================
    ERRO
@@ -613,61 +617,47 @@ footer {
     font-family: sans-serif;
 }
 
+
 /* =========================
    ANIMAÇÕES
 ========================= */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.reveal-bottom {
+  opacity: 0;
+  transform: translateY(40px); /* começa deslocado para baixo */
+  transition: all 0.8s ease;
+}
+
+.reveal-bottom.active {
+  opacity: 1;
+  transform: translateY(0); /* volta para a posição normal */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 
-
+/* =========================
+   AJUSTES FINAIS
+========================= */
 .item picture,
 .item picture img {
     width: 100% !important;
