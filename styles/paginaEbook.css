@@ -1,0 +1,603 @@
+/* =======================
+   RESET & BASE
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+  min-height: 200px;
+  max-height: 320px;
+  background: linear-gradient(140deg, rgb(13, 60, 172) 0%, #042675 50%, rgb(11, 60, 185) 100%);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.6s ease-in-out;
+  position: relative;
+}
+
+header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 100px;
+}
+
+.esquerda,
+.direita {
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.centro {
+  text-align: center;
+}
+
+.logo {
+  height: 50px;
+  margin: 10px;
+}
+
+header a.btn.btn-home {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: white;
+  font-size: large;
+  display: inline-block;
+  float: right;
+  transition: all 0.3s ease;
+}
+
+header a.btn.btn-primary:hover {
+  background-color: #0071e3;
+}
+
+/* =======================
+   BOTÕES
+======================= */
+button,
+.btn {
+  font-family: inherit;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #0071e3;
+  transform: translateY(-2px) scale(1.02);
+}
+
+button.btn-quadrado {
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.btn-home-topico {
+  background-color: #f0f8ff;
+  color: #042c5c;
+  border: 2px solid #0056b3;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-home-topico:hover {
+  background-color: #e0f0ff;
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* =======================
+   MAIN
+======================= */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.ebook-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.ebook-header {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.ebook-header h3 {
+  color: #042c5c;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #0056b3;
+  margin-top: 1rem;
+}
+
+.ebook-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: justify;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.ebook-cover {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ebook-cover img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.ebook-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ebook-actions button {
+  background-color: #0056b3;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 260px;
+}
+
+.ebook-actions button:hover {
+  background-color: #0071e3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+}
+
+
+/*INTEGRANTES*/
+.integrantes-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.sala img{
+    border-radius: 20px;
+}
+
+.intPjt,
+.auxi {
+  margin-bottom: 2rem;
+}
+
+.intPjt h2,
+.auxi h3 {
+  color: #042c5c;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.intPjt h3,
+.auxi h3 {
+  color: #0056b3;
+  font-size: 1.3rem;
+  margin: 1.2rem 0 0.6rem;
+  font-weight: 500;
+}
+
+/* Listas */
+.lista-nomes,
+.lista-prof,
+.lista-aux {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.8rem 0;
+}
+
+.lista-nomes li,
+.lista-prof li,
+.lista-aux li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #e0e7ff;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.lista-nomes li:hover,
+.lista-prof li:hover,
+.lista-aux li:hover {
+  color: #0056b3;
+}
+
+/* Destaque especial para professora */
+.lista-prof li {
+  background: linear-gradient(90deg, #e0f0ff 0%, #f0f8ff 100%);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #042c5c;
+  border-left: 4px solid #0056b3;
+  margin: 0.5rem 0;
+}
+
+
+
+/* =======================
+   SECTIONS
+======================= */
+section {
+  background-color: #fff;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+main section img {
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 1.6rem;
+  color: #042c5c;
+  margin-bottom: 1rem;
+}
+
+
+
+section h3 {
+  font-size: 1.2rem;
+  color: #0056b3;
+  margin-top: 1rem;
+}
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  background-color: #042c5c;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-top: 4px solid #0056b3;
+  font-size: 0.95rem;
+}
+
+/* =======================
+   RESPONSIVIDADE
+======================= */
+
+/* Header */
+@media (max-width: 992px) {
+  header h1 {
+    font-size: 2.5rem;
+    padding-top: 80px;
+  }
+  .pesquisa-container {
+    padding: 20px 10%;
+  }
+  .pesquisa-container input {
+    font-size: 1.1rem;
+  }
+  .logo {
+    height: 60px;
+    margin: 15px;
+  }
+  header a.btn-home {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 1rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+  main {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pesquisa-container {
+    padding: 15px 5%;
+  }
+  .pesquisa-container input {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .logo {
+    height: 50px;
+    margin: 10px;
+  }
+  header a.btn-home {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Slide */
+@media (max-width: 992px) {
+  .slideDef h4 {
+    font-size: 1.5rem;
+  }
+  .item {
+    aspect-ratio: 16 / 9;
+  }
+  .overlay h2 {
+    font-size: 1.3rem;
+  }
+  .overlay p {
+    font-size: 0.9rem;
+  }
+  .arrow-left,
+  .arrow-right {
+    width: 45px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .slideDef h4 {
+    font-size: 1.3rem;
+  }
+  .item {
+    aspect-ratio: 4 / 3;
+  }
+  .overlay {
+    max-height: 60%;
+    padding: 10px 15px;
+  }
+  .overlay h2 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .overlay p {
+    font-size: 0.8rem;
+  }
+  .arrow-left,
+  .arrow-right {
+    width: 35px;
+    font-size: 20px;
+  }
+}
+
+/* Cards */
+@media (max-width: 576px) {
+  .card-body h5 {
+    font-size: 1.1rem;
+  }
+  .card-body p {
+    font-size: 0.9rem;
+  }
+  main section img {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .integrantes-container {
+    padding: 1.2rem;
+    margin: 1rem;
+  }
+
+  .intPjt h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .intPjt h3,
+  .auxi h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .lista-nomes li,
+  .lista-aux li {
+    font-size: 0.95rem;
+  }
+
+  .lista-prof li {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .lista-nomes li,
+  .lista-prof li,
+  .lista-aux li {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+}
+
+
+/* RESPONSIVIDADE E-book */
+@media (max-width: 768px) {
+  .ebook-header {
+    flex-direction: column;
+    align-items: center;        /* Centraliza os itens filhos */
+    text-align: center;
+  }
+  
+  .ebook-text {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .ebook-cover {
+    flex: none;
+    width: 100%;
+    max-width: 300px;           /* Limita a largura máxima */
+    margin: 0 auto;             /* Centraliza o bloco inteiro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;        /* Centraliza imagem e botão */
+  }
+
+  .ebook-cover img {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  .ebook-actions {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .ebook-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .ebook-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .ebook-text {
+    font-size: 0.95rem;
+  }
+  
+  .ebook-cover img {
+    max-width: 220px;
+  }
+  
+  .ebook-actions button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* =======================
+   ANIMAÇÕES
+======================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Keyframes */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
